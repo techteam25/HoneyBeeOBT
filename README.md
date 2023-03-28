@@ -12,6 +12,9 @@ Here are links that will be helpful:<br>
 Concept design slides -- beginning about slide 10 you will find content for UI/UX modifications. 
 https://docs.google.com/presentation/d/1k8fdry6r5ceF_JxErI-VG-ADXs7hvyc137I2nNAU8AQ/edit#slide=id.p
 
+Explanation of Title, Passage Overview and Subtitle slides:
+https://docs.google.com/document/d/19qVqktToNzmS8evl0Y-jqf-WwdXXT_Tf/edit?usp=share_link&ouid=106666076319626053094&rtpof=true&sd=true
+
 Website with an explainer presentation
 https://sites.google.com/view/honeybeeobt/home?authuser=0
 
