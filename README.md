@@ -6,7 +6,6 @@ Those familiar with StoryPublisher will notice as they go through the concept de
 
 
 Here are links that will be helpful:
-
 Concept design slides -- beginning about slide 10 you will find content for UI/UX modifications. 
 https://docs.google.com/presentation/d/1k8fdry6r5ceF_JxErI-VG-ADXs7hvyc137I2nNAU8AQ/edit#slide=id.p
 
