@@ -13,7 +13,7 @@ https://docs.google.com/presentation/d/1k8fdry6r5ceF_JxErI-VG-ADXs7hvyc137I2nNAU
 Website with an explainer presentation
 https://sites.google.com/view/honeybeeobt/home?authuser=0
 
-Google drive of draft templates with BENs
+Draft templates 
 https://drive.google.com/drive/u/3/folders/1xrhak4TW5Ys8-q32gQZXe89rqMNQkt9R
 
 StoryPublisher website
