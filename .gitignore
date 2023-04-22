@@ -35,8 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-#node_modules
-/node_modules
-
 #NPM
 package-lock.json
