@@ -31,7 +31,19 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First clone the repo to your desired dev location locally:
+
+``` git clone <url>```
+
+Than make sure you have the latest version of Node.js installed, look here:
+
+https://nodejs.org/en/download
+
+After this run this command inside of the cloned directory:
+
+``` npx run install ```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -59,6 +71,10 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Testing
+
+The standard I am hoping for is to not unit test using Jest and just E2E (end to end) test with Cypress. If we have good reasons to do otherwise I am more than willing to change this.
 
 ## Tutorials
 
