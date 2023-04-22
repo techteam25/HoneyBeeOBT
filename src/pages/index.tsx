@@ -15,29 +15,28 @@ const Scripture = () => {
   const [toggle, setToggle] = React.useState(true);
   const [arrayData, setArrayData] = React.useState<JSONData[]>([]);
 
-  async function getData() {
-    if (toggle) {
-      await axios.get("/api/example").then((response) => {
-        for (let int in response.data) {
-          setArrayData((arrayData) => [...arrayData, response.data[int]]);
-        }
-
-        console.log(arrayData);
-      });
-      return;
-    }
-  }
-
   useEffect(() => {
     setToggle(false);
+    async function getData() {
+      if (toggle) {
+        await axios.get("/api/example").then((response) => {
+          for (let int in response.data) {
+            setArrayData((arrayData) => [...arrayData, response.data[int]]);
+          }
+
+          console.log(arrayData);
+        });
+        return;
+      }
+    }
     getData();
-  }, []);
+  }, [arrayData, toggle]);
 
   return (
     <div className="main-contianer" style={{ paddingTop: "5vh" }}>
       <Card sx={{ ml: "15vw", mr: "15vw" }}>
         <CardContent>
-          <Typography variant="h2" style={{ textAlign: "center" }}>
+          <Typography variant="h3" style={{ textAlign: "center" }}>
             Story Template
           </Typography>
         </CardContent>

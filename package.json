@@ -1,5 +1,5 @@
 {
-  "name": "mtt-next-spadv",
+  "name": "honeybeeobt",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -24,6 +24,7 @@
     "react": "18.2.0",
     "react-burger-menu": "^3.0.9",
     "react-dom": "18.2.0",
+    "sharp": "^0.32.0",
     "typescript": "5.0.4"
   },
   "devDependencies": {
