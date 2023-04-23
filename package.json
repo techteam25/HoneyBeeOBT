@@ -10,7 +10,7 @@
     "cypress": "cypress open",
     "cypress run": "cypress run",
     "coverage": "npx nyc report --reporter=text-summary",
-    "insturment": "npx nyc instrument --compact=false src instrumented"
+    "instrument": "npx nyc instrument --compact=false src instrumented"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
