@@ -88,3 +88,9 @@ https://www.youtube.com/watch?v=e1EIwuO-Dlo
 
 ### Cursory:
 https://www.youtube.com/watch?v=__mSgDEOyv8&t=303s&pp=ygUdZWFzeSBuZXh0IHR5cGVzY3JpcHQgdHV0b3JpYWw%3D
+
+## Welcome to Next
+
+Next is a flavor of React that has many advantages including a self hosted backend API structure. Most of our development will take place in Next using TypeScript (a type-safe form of JavaScript).
+
+Upon some further investigation we will be connecting most forms of this software to remote servers to do alot of our processing so as not to burden the physical devices of the user. But upon having no internet we will rely upon the native devices to create and edit the media.
