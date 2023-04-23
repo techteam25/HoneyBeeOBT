@@ -35,8 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-#NPM
-package-lock.json
-
 #instrumented
 /instrumented
