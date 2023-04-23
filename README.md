@@ -76,6 +76,8 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The standard I am hoping for is to not unit test using Jest and just E2E (end to end) test with Cypress. If we have good reasons to do otherwise I am more than willing to change this.
 
+https://docs.cypress.io/guides/tooling/code-coverage is my guide for implementing, not done, yet, but getting closer
+
 ## Tutorials
 
 To gets started with Next (a flavor of React) with TypeScript feel free to look at the code base, ask questions and watch tutorials:

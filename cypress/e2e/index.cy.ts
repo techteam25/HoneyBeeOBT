@@ -1,5 +1,6 @@
 describe('template spec', () => {
   it('passes', () => {
-    cy.visit('http://localhost:3000')
+    const render = cy.visit('http://localhost:3000')
+    expect(render).to.contain("Template")
   })
 })
