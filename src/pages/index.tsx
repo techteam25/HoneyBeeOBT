@@ -42,7 +42,7 @@ const Scripture = () => {
         </CardContent>
       </Card>
 
-      {arrayData.map((element, key) => (
+      {arrayData.map((element) => (
         <Card variant="outlined" sx={{ m: "5vw" }} key={element.key}>
           <CardContent>
             <Box
