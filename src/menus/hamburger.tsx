@@ -13,7 +13,7 @@ const HamburgerMenu = () => (
 );
 
 const HamburgerIcon = () => (
-  <div className="p-1/2">
+  <div className="p-1/2" data-testid="burger-icon">
     <svg
       className="w-8 h-8 text-gray-500"
       fill="none"
@@ -30,7 +30,7 @@ const HamburgerIcon = () => (
 
 export const Links = () => (
   <>
-    <Link id="home" className="menu-item" href="/">
+    <Link id="home" className="menu-item" data-testid="burger-home" href="/">
       Home
     </Link>
     <Link id="scripture" className="menu-item" href="/scripture">
