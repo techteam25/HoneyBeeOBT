@@ -12,7 +12,7 @@ interface JSONData {
   key: string;
 }
 
-const Scripture = () => {
+const Home = () => {
   const [toggle, setToggle] = React.useState(true);
   const [arrayData, setArrayData] = React.useState<JSONData[]>([]);
 
@@ -71,4 +71,4 @@ const Scripture = () => {
   );
 };
 
-export default Scripture;
+export default Home;
