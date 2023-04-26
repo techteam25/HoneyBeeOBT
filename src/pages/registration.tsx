@@ -10,12 +10,16 @@ import {
 import React, { useEffect } from "react";
 
 const Registration = () => {
+  //handlers for Language Menu
   const [anchorLanguage, setAnchorLanguage] =
     React.useState<null | HTMLElement>(null);
+  const openLanguage = Boolean(anchorLanguage);
+
+  //hnadlers for Translator Menu
   const [anchorTranslator, setAnchorTranslator] =
     React.useState<null | HTMLElement>(null);
-  const openLanguage = Boolean(anchorLanguage);
   const openTranslator = Boolean(anchorTranslator);
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorLanguage(event.currentTarget);
   };
