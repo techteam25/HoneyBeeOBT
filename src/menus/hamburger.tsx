@@ -16,7 +16,7 @@ const HamburgerMenu = () => (
       <Link id="download" className="menu-item" href="/download">
         Download Templates
       </Link>
-      <Link id="update" className="menu-item" href="/update">
+      <Link id="update" className="menu-item" href="/registration">
         Project Registration
       </Link>
       <Link id="search" className="menu-item" href="/search">
