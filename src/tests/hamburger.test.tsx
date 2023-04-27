@@ -1,6 +1,6 @@
 /** @jest-environment jsdom */
 import { render, screen } from "@testing-library/react";
-import HamburgerMenu from "@/menus/hamburger";
+import HamburgerMenu from "@/components/menus/hamburger";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 
