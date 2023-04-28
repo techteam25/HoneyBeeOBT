@@ -12,6 +12,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import Image from "next/image";
 import { act } from "@testing-library/react";
+import WordDialog from "@/components/dialogs/wordDialogs";
 
 interface JSONData {
   name: string;
@@ -19,9 +20,28 @@ interface JSONData {
   key: string;
 }
 
+function handleDialog(
+  name: string,
+  description: string,
+  setClose: any,
+  close: boolean,
+  key: string
+) {
+  setClose(false);
+  return (
+    <WordDialog
+      close={close}
+      name={name}
+      description={description}
+      setClose={setClose}
+    />
+  );
+}
+
 const Words = () => {
   const [toggle, setToggle] = React.useState(true);
   const [arrayData, setArrayData] = React.useState<JSONData[]>([]);
+  const [close, setClose] = React.useState(true);
   useEffect(() => {
     setToggle(false);
     async function getData() {
@@ -57,16 +77,25 @@ const Words = () => {
           }}
         >
           {arrayData.map((element) => (
-            <List
-              key={element.key}
-              style={{ paddingTop: "1vh", textAlign: "center" }}
-            >
-              <ListItem disablePadding>
-                <ListItemButton>
-                  <ListItemText primary={element.name} />
-                </ListItemButton>
-              </ListItem>
-            </List>
+            <div key={element.key}>
+              <List style={{ paddingTop: "1vh", textAlign: "center" }}>
+                <ListItem disablePadding>
+                  <ListItemButton
+                    onClick={() =>
+                      handleDialog(
+                        element.name,
+                        element.description,
+                        setClose,
+                        close,
+                        element.key
+                      )
+                    }
+                  >
+                    <ListItemText primary={element.name} />
+                  </ListItemButton>
+                </ListItem>
+              </List>
+            </div>
           ))}
         </nav>
       </Grid>
