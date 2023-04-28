@@ -16,7 +16,7 @@ describe("Home", () => {
             record1: {
               name: "Story Name Here",
               description: "Example description",
-              image: "/logo192.png",
+              image: "http://localhost:3000/logo192.png",
               key: "story1",
               progress: true,
               completed: false,
@@ -24,7 +24,7 @@ describe("Home", () => {
             record2: {
               name: "Story Name 2",
               description: "Here is example Description 2",
-              image: "/logo192.png",
+              image: "http://localhost:3000/logo192.png",
               key: "story2",
               progress: false,
               completed: true,
@@ -32,7 +32,7 @@ describe("Home", () => {
             record3: {
               name: "Jesus Rising",
               description: "Here is more info",
-              image: "/tomb2.jpg",
+              image: "http://localhost:3000/logo192.png",
               key: "story3",
               progress: false,
               completed: false,
