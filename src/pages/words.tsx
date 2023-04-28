@@ -26,17 +26,15 @@ const Words = () => {
   const [toggle, setToggle] = React.useState(true);
   const [arrayData, setArrayData] = React.useState<JSONData[]>([]);
   const [open, setOpen] = React.useState(true);
-
+  const [name, setName] = React.useState("");
+  const [description, setDescription] = React.useState("");
   const handleClickOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
 
-  const [name, setName] = React.useState("");
-  const [description, setDescription] = React.useState("");
   useEffect(() => {
     setToggle(false);
     async function getData() {
