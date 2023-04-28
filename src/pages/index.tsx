@@ -64,21 +64,16 @@ const Home = () => {
       if (toggle) {
         await axios.get("/api/home").then((response) => {
           for (let int in response.data) {
-            act(() => {
-              setArrayData((arrayData) => [...arrayData, response.data[int]]);
-              if (response.data[int].progress === true) {
-                setInProgress((inProgress) => [
-                  ...inProgress,
-                  response.data[int],
-                ]);
-              }
-              if (response.data[int].completed === true) {
-                setCompleted((inProgress) => [
-                  ...inProgress,
-                  response.data[int],
-                ]);
-              }
-            });
+            setArrayData((arrayData) => [...arrayData, response.data[int]]);
+            if (response.data[int].progress === true) {
+              setInProgress((inProgress) => [
+                ...inProgress,
+                response.data[int],
+              ]);
+            }
+            if (response.data[int].completed === true) {
+              setCompleted((inProgress) => [...inProgress, response.data[int]]);
+            }
           }
         });
         return;

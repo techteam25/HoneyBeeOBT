@@ -24,9 +24,7 @@ const Download = () => {
       if (toggle) {
         await axios.get("/api/download").then((response) => {
           for (let int in response.data) {
-            act(() => {
-              setArrayData((arrayData) => [...arrayData, response.data[int]]);
-            });
+            setArrayData((arrayData) => [...arrayData, response.data[int]]);
           }
 
           console.log(arrayData);
