@@ -28,6 +28,9 @@ const HamburgerMenu = () => (
       <Link id="language" className="menu-item" href="/language">
         Select Language
       </Link>
+      <Link id="language" className="menu-item" href="/words">
+        Word Links List
+      </Link>
       <Link id="demo" className="menu-item" href="/demo">
         Add Demo
       </Link>
