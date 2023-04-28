@@ -1,6 +1,10 @@
 import {
   Card,
   CardContent,
+  Dialog,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
   Grid,
   List,
   ListItem,
@@ -10,9 +14,7 @@ import {
 } from "@mui/material";
 import React, { useEffect } from "react";
 import axios from "axios";
-import Image from "next/image";
 import { act } from "@testing-library/react";
-import WordDialog from "@/components/dialogs/wordDialogs";
 
 interface JSONData {
   name: string;
@@ -20,28 +22,21 @@ interface JSONData {
   key: string;
 }
 
-function handleDialog(
-  name: string,
-  description: string,
-  setClose: any,
-  close: boolean,
-  key: string
-) {
-  setClose(false);
-  return (
-    <WordDialog
-      close={close}
-      name={name}
-      description={description}
-      setClose={setClose}
-    />
-  );
-}
-
 const Words = () => {
   const [toggle, setToggle] = React.useState(true);
   const [arrayData, setArrayData] = React.useState<JSONData[]>([]);
-  const [close, setClose] = React.useState(true);
+  const [open, setOpen] = React.useState(true);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const [name, setName] = React.useState("");
+  const [description, setDescription] = React.useState("");
   useEffect(() => {
     setToggle(false);
     async function getData() {
@@ -69,6 +64,14 @@ const Words = () => {
           </Typography>
         </CardContent>
       </Card>
+      <Dialog onClose={handleClose} open={open}>
+        <DialogTitle>{name}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="word-dialog-description">
+            {description}
+          </DialogContentText>
+        </DialogContent>
+      </Dialog>
       <Grid container justifyContent="center">
         <nav
           aria-label="List of Languages"
@@ -81,15 +84,11 @@ const Words = () => {
               <List style={{ paddingTop: "1vh", textAlign: "center" }}>
                 <ListItem disablePadding>
                   <ListItemButton
-                    onClick={() =>
-                      handleDialog(
-                        element.name,
-                        element.description,
-                        setClose,
-                        close,
-                        element.key
-                      )
-                    }
+                    onClick={() => {
+                      setName(element.name);
+                      setDescription(element.description);
+                      handleClickOpen();
+                    }}
                   >
                     <ListItemText primary={element.name} />
                   </ListItemButton>
