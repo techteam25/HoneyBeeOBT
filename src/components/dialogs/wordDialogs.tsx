@@ -1,14 +1,4 @@
-import {
-  Avatar,
-  Dialog,
-  DialogTitle,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemButton,
-  ListItemText,
-  Typography,
-} from "@mui/material";
+import { Dialog, DialogTitle, Typography } from "@mui/material";
 import React from "react";
 
 export interface SimpleDialogProps {
