@@ -2,9 +2,9 @@
 import "@testing-library/jest-dom";
 import {expect} from '@jest/globals';
 import { createMocks } from 'node-mocks-http';
-import handler from '../../pages/api/demo';
+import handler from '../../pages/api/home';
 
-describe('/api/demo', () => {
+describe('/api/home', () => {
     test('should returna an object with a name', async () => {
         const { req, res } = createMocks({
             method: 'GET'

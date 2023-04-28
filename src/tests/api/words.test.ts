@@ -2,9 +2,9 @@
 import "@testing-library/jest-dom";
 import {expect} from '@jest/globals';
 import { createMocks } from 'node-mocks-http';
-import handler from '../../pages/api/demo';
+import handler from '../../pages/api/words';
 
-describe('/api/demo', () => {
+describe('/api/words', () => {
     test('should returna an object with a name', async () => {
         const { req, res } = createMocks({
             method: 'GET'
@@ -14,6 +14,6 @@ describe('/api/demo', () => {
         expect(res._getStatusCode()).toBe(200)
         expect(
             JSON.parse(res._getData())
-        ).toHaveProperty('record1');
+        ).toHaveProperty('word1');
     });
 });
