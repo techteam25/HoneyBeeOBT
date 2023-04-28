@@ -11,7 +11,7 @@
     "cypress run": "cypress run",
     "coverage": "npx nyc report --reporter=text-summary",
     "instrument": "npx nyc instrument --compact=false src instrumented",
-    "test": "jest --coverage"
+    "test": "jest --collectCoverageFrom='src/**/*.{ts,tsx}' --watchAll --coverage"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",

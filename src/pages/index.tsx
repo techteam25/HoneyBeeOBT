@@ -133,8 +133,8 @@ const Home = () => {
                   }}
                 >
                   <Image
-                    src={element.image}
-                    alt={element.description}
+                    src={element.image || "source for description"}
+                    alt={element.description || "image for description"}
                     width={100}
                     height={100}
                   />
