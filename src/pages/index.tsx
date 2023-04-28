@@ -80,8 +80,6 @@ const Home = () => {
               }
             });
           }
-
-          console.log(arrayData);
         });
         return;
       }
@@ -122,7 +120,11 @@ const Home = () => {
         </Box>
         <TabPanel value={value} index={0}>
           {arrayData.map((element) => (
-            <Card variant="outlined" sx={{ m: "5vw" }} key={element.key}>
+            <Card
+              variant="outlined"
+              sx={{ m: "5vw" }}
+              key={element.key || "homeKey"}
+            >
               <CardContent>
                 <Box
                   sx={{
@@ -133,7 +135,7 @@ const Home = () => {
                   }}
                 >
                   <Image
-                    src={element.image}
+                    src={element.image || "http://localhost:3000/logo192.png"}
                     alt={element.description || "image for description"}
                     width={100}
                     height={100}
