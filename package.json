@@ -7,10 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "cypress": "cypress open",
-    "cypress run": "cypress run",
-    "coverage": "npx nyc report --reporter=text-summary",
-    "instrument": "npx nyc instrument --compact=false src instrumented",
     "test": "jest --coverage --watchAll --silent",
     "test-workflows": "jest --coverage --silent"
   },
@@ -35,12 +31,9 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@cypress/code-coverage": "^3.10.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/react-burger-menu": "^2.8.3",
-    "babel-plugin-istanbul": "^6.1.1",
-    "cypress": "^12.9.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0"
   }
