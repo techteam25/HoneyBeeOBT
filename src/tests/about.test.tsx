@@ -5,7 +5,7 @@ import "@testing-library/jest-dom";
 
 jest.mock("axios");
 
-describe("About", () => {
+describe("About Test", () => {
   it("renders About panel", () => {
     render(<About />);
   });
