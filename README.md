@@ -77,9 +77,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Testing
 
-The standard I am hoping for is to not unit test using Jest and just E2E (end to end) test with Cypress. If we have good reasons to do otherwise I am more than willing to change this.
+New Changes! We are goign to be using Jest unit testing into the future. The E2E Cypress testing test refused to work well with out configuration so we will be removing Cypress ASAP.
 
-https://docs.cypress.io/guides/tooling/code-coverage is my guide for implementing, not done, yet, but getting closer
+To see example tests please look in the src/tests/ directory. 
+
+To run tests ```npm run test``` and to see all of the potential console errors remove the --silent flag from your test command in package.json ( often not necessary unless the test is failing or note fully testing code)
+
+At some point we will need to focues on unit testing and up our coverage, right now basic tests for all of the pages should be just fine.
 
 ## Tutorials
 
