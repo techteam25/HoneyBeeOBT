@@ -28,9 +28,9 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm ci
-    - echo: "running build"
+    - run: echo "Running build"
     - run: npm run build --if-present
-    - echo: "running lint"
+    - run: echo "Running lint"
     - run: npm run lint
-    - echo: "running unit tests"
+    - run: echo "Running unit tests"
     - run: npm run test-workflows
