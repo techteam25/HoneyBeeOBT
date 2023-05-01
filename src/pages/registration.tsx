@@ -8,7 +8,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React, { useEffect } from "react";
+import React from "react";
 
 const Registration = () => {
   //handlers for Language Menu

@@ -3,7 +3,6 @@ import { Box } from "@mui/system";
 import React, { useEffect } from "react";
 import axios from "axios";
 import Image from "next/image";
-import { act } from "@testing-library/react";
 import Link from "next/link";
 import DOMPurify from "dompurify";
 
