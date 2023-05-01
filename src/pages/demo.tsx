@@ -5,6 +5,7 @@ import axios from "axios";
 import Image from "next/image";
 import { act } from "@testing-library/react";
 import Link from "next/link";
+import DOMPurify from "dompurify";
 
 interface JSONData {
   name: string;
@@ -26,8 +27,6 @@ const Download = () => {
           for (let int in response.data) {
             setArrayData((arrayData) => [...arrayData, response.data[int]]);
           }
-
-          console.log(arrayData);
         });
         return;
       }
@@ -47,7 +46,7 @@ const Download = () => {
 
       {arrayData.map((element) => (
         <Card variant="outlined" sx={{ m: "5vw" }} key={element.key}>
-          <Link href={element.link}>
+          <Link href={DOMPurify.sanitize(element.link)}>
             <CardContent>
               <Box
                 sx={{

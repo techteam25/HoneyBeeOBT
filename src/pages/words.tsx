@@ -43,8 +43,6 @@ const Words = () => {
           for (let int in response.data) {
             setArrayData((arrayData) => [...arrayData, response.data[int]]);
           }
-
-          console.log(arrayData);
         });
         return;
       }
