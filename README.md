@@ -1,7 +1,8 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/49899014-f5d7-490e-adaf-e97d00194e4d/deploy-status)](https://app.netlify.com/sites/harmonious-mooncake-ebeb8e/deploys)
 # HoneyBeeOBT
 HoneyBee Oral Bible Translation tool
 
-## Live demo available at https://mtt-honeyb.herokuapp.com/
+## Live demo available at https://mtt-honeyb.herokuapp.com/ and https://harmonious-mooncake-ebeb8e.netlify.app/ (Heroku Costs Money, so we will probably be switching to netlify)
 This demo runs of of the OOCAZ fork, but should be updated every day, may make an automation or transfer to techteam deployment
 
 Direction for HoneyBee development:
