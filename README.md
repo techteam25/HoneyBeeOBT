@@ -1,4 +1,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/49899014-f5d7-490e-adaf-e97d00194e4d/deploy-status)](https://app.netlify.com/sites/harmonious-mooncake-ebeb8e/deploys)
+[![Node.js CI](https://github.com/techteam25/HoneyBeeOBT/actions/workflows/node.js.yml/badge.svg)](https://github.com/techteam25/HoneyBeeOBT/actions/workflows/node.js.yml)
 # HoneyBeeOBT
 HoneyBee Oral Bible Translation tool
 
