@@ -105,3 +105,6 @@ https://www.youtube.com/watch?v=__mSgDEOyv8&t=303s&pp=ygUdZWFzeSBuZXh0IHR5cGVzY3
 Next is a flavor of React that has many advantages including a self hosted backend API structure. Most of our development will take place in Next using TypeScript (a type-safe form of JavaScript).
 
 Upon some further investigation we will be connecting most forms of this software to remote servers to do alot of our processing so as not to burden the physical devices of the user. But upon having no internet we will rely upon the native devices to create and edit the media.
+
+## Vulnerability scanning and patching
+For the immediate need of harding web apps we will be using Snyk.io a scanner tool and vulnerability fixer for our needs. Has some good integration with github out of the box and is free to use.
