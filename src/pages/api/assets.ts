@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import path from 'path';
 import { promises as fs } from 'fs';
-import { ipRateLimit } from '@/components/menus/middleware/ipRateLimit';
+import { ipRateLimit } from '@/components/middleware/ipRateLimit';
 
 export default async function handler(
   req: NextApiRequest & Request,
