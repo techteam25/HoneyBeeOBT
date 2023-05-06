@@ -11,7 +11,7 @@ interface JSONData {
   key: string;
 }
 
-const Naturalness = () => {
+const Finalize = () => {
   const [toggle, setToggle] = React.useState(true);
   const [arrayData, setArrayData] = React.useState<JSONData[]>([]);
 
@@ -35,7 +35,7 @@ const Naturalness = () => {
       <Card sx={{ ml: "15vw", mr: "15vw" }}>
         <CardContent>
           <Typography variant="h3" style={{ textAlign: "center" }}>
-            Naturalness
+            Finalize
           </Typography>
         </CardContent>
       </Card>
@@ -54,13 +54,13 @@ const Naturalness = () => {
       <Link
         id="workflow-translate"
         className="menu-item"
-        data-testid="burger-workflow-translate"
-        href="/workflow/accuracy"
+        data-testid="burger-workflow"
+        href="/workflow/review"
       >
         <Card sx={{ ml: "15vw", mr: "15vw", mb: "5vh" }}>
           <CardContent>
             <Typography variant="h4" style={{ textAlign: "center" }}>
-              Onto Accuracy
+              Onto Review
             </Typography>
           </CardContent>
         </Card>
@@ -69,4 +69,4 @@ const Naturalness = () => {
   );
 };
 
-export default Naturalness;
+export default Finalize;

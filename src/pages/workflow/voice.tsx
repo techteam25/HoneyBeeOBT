@@ -11,7 +11,7 @@ interface JSONData {
   key: string;
 }
 
-const Naturalness = () => {
+const VoiceStudio = () => {
   const [toggle, setToggle] = React.useState(true);
   const [arrayData, setArrayData] = React.useState<JSONData[]>([]);
 
@@ -35,7 +35,7 @@ const Naturalness = () => {
       <Card sx={{ ml: "15vw", mr: "15vw" }}>
         <CardContent>
           <Typography variant="h3" style={{ textAlign: "center" }}>
-            Naturalness
+            Voice Studio
           </Typography>
         </CardContent>
       </Card>
@@ -55,12 +55,12 @@ const Naturalness = () => {
         id="workflow-translate"
         className="menu-item"
         data-testid="burger-workflow-translate"
-        href="/workflow/accuracy"
+        href="/workflow/finalize"
       >
         <Card sx={{ ml: "15vw", mr: "15vw", mb: "5vh" }}>
           <CardContent>
             <Typography variant="h4" style={{ textAlign: "center" }}>
-              Onto Accuracy
+              Onto Finalize
             </Typography>
           </CardContent>
         </Card>
@@ -69,4 +69,4 @@ const Naturalness = () => {
   );
 };
 
-export default Naturalness;
+export default VoiceStudio;
