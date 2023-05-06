@@ -57,25 +57,41 @@ const HamburgerMenu = () => (
       >
         <Typography variant="h3">Workflow</Typography>
       </Link>
-      <Link id="workflow-learn" className="menu-item" href="/learn">
-        About
+      <Link id="workflow-learn" className="menu-item" href="/workflow/learn">
+        Learn
       </Link>
-      <Link id="workflow-translate" className="menu-item" href="/translate">
+      <Link
+        id="workflow-translate"
+        className="menu-item"
+        href="/workflow/translate"
+      >
         Translate and Revise
       </Link>
-      <Link id="workflow-naturalness" className="menu-item" href="/naturalness">
+      <Link
+        id="workflow-naturalness"
+        className="menu-item"
+        href="/workflow/naturalness"
+      >
         Naturanlness Checks
       </Link>
-      <Link id="workflow-accuracy" className="menu-item" href="/accuracy">
+      <Link
+        id="workflow-accuracy"
+        className="menu-item"
+        href="/workflow/accuracy"
+      >
         Accuracy Check
       </Link>
-      <Link id="workflow-voice" className="menu-item" href="/voice">
+      <Link id="workflow-voice" className="menu-item" href="/workflow/voice">
         Voice Studio
       </Link>
-      <Link id="workflow-finalize" className="menu-item" href="/finalize">
+      <Link
+        id="workflow-finalize"
+        className="menu-item"
+        href="/workflow/finalize"
+      >
         Finalize
       </Link>
-      <Link id="workflow-review" className="menu-item" href="/review">
+      <Link id="workflow-review" className="menu-item" href="/workflow/review">
         Review + Share
       </Link>
     </Menu>
