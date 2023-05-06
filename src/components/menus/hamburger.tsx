@@ -8,7 +8,14 @@ const HamburgerMenu = () => (
       width={"auto"}
       className="left-0 top-12"
     >
-      <Typography variant="h3">Navigation</Typography>
+      <Link
+        id="home-navigation"
+        className="menu-item"
+        data-testid="burger-home-nav"
+        href="/"
+      >
+        <Typography variant="h3">Navigation</Typography>
+      </Link>
       <Link id="home" className="menu-item" data-testid="burger-home" href="/">
         Home
       </Link>
@@ -42,7 +49,14 @@ const HamburgerMenu = () => (
       <Link id="about" className="menu-item" href="/about">
         About
       </Link>
-      <Typography variant="h3">Workflow</Typography>
+      <Link
+        id="home-workflow"
+        className="menu-item"
+        data-testid="burger-home-workflow"
+        href="/workflow"
+      >
+        <Typography variant="h3">Workflow</Typography>
+      </Link>
       <Link id="workflow-learn" className="menu-item" href="/learn">
         About
       </Link>
