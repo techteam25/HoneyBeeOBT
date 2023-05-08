@@ -1,8 +1,8 @@
-import { Card, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
-import DOMPurify from "dompurify";
+import ReactPlayer from "react-player";
 
 interface JSONData {
   name: string;
@@ -39,18 +39,20 @@ const Learn = () => {
           </Typography>
         </CardContent>
       </Card>
-
-      {arrayData.map((element) => (
-        <Card variant="outlined" sx={{ m: "5vw" }} key={element.key}>
-          <Link href={DOMPurify.sanitize(element.link)}>
-            <CardContent>
-              <Typography variant="h5" sx={{ ml: "10vw" }}>
-                {element.name}
-              </Typography>
-            </CardContent>
-          </Link>
-        </Card>
-      ))}
+      <Box
+        style={{
+          display: "flex",
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          marginLeft: "15vw",
+          marginRight: "15vw",
+          marginTop: "5vh",
+          marginBottom: "5vh",
+        }}
+      >
+        <ReactPlayer url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
+      </Box>
       <Link
         id="workflow-translate"
         className="menu-item"
