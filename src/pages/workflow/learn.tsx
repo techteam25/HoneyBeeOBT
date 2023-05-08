@@ -1,13 +1,12 @@
-import { Card, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
-import DOMPurify from "dompurify";
+import ReactPlayer from "react-player";
 
 interface JSONData {
   name: string;
-  description: string;
-  link: string;
+  video: string;
   key: string;
 }
 
@@ -19,7 +18,7 @@ const Learn = () => {
     setToggle(false);
     async function getData() {
       if (toggle) {
-        await axios.get("/api/workflow").then((response) => {
+        await axios.get("/api/workflow/learn").then((response) => {
           for (let int in response.data) {
             setArrayData((arrayData) => [...arrayData, response.data[int]]);
           }
@@ -39,18 +38,22 @@ const Learn = () => {
           </Typography>
         </CardContent>
       </Card>
-
-      {arrayData.map((element) => (
-        <Card variant="outlined" sx={{ m: "5vw" }} key={element.key}>
-          <Link href={DOMPurify.sanitize(element.link)}>
-            <CardContent>
-              <Typography variant="h5" sx={{ ml: "10vw" }}>
-                {element.name}
-              </Typography>
-            </CardContent>
-          </Link>
-        </Card>
-      ))}
+      <Box
+        style={{
+          display: "flex",
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          marginLeft: "15vw",
+          marginRight: "15vw",
+          marginTop: "5vh",
+          marginBottom: "5vh",
+        }}
+      >
+        {arrayData.map((element) => (
+          <ReactPlayer url={element.video} key={element.key} />
+        ))}
+      </Box>
       <Link
         id="workflow-translate"
         className="menu-item"
