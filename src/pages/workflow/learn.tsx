@@ -6,8 +6,7 @@ import ReactPlayer from "react-player";
 
 interface JSONData {
   name: string;
-  description: string;
-  link: string;
+  video: string;
   key: string;
 }
 
@@ -19,7 +18,7 @@ const Learn = () => {
     setToggle(false);
     async function getData() {
       if (toggle) {
-        await axios.get("/api/workflow").then((response) => {
+        await axios.get("/api/workflow/learn").then((response) => {
           for (let int in response.data) {
             setArrayData((arrayData) => [...arrayData, response.data[int]]);
           }
@@ -51,7 +50,9 @@ const Learn = () => {
           marginBottom: "5vh",
         }}
       >
-        <ReactPlayer url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
+        {arrayData.map((element) => (
+          <ReactPlayer url={element.video} key={element.key} />
+        ))}
       </Box>
       <Link
         id="workflow-translate"
