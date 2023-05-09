@@ -10,7 +10,7 @@ export default function handler(
         name: "Example of video",
         description: "This is an example of a video",
         image: "https://picsum.photos/200/300",
-        data: "lorem ipsumn",
+        data: "lorem ipsumn",   
         video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", 
         key: "story1"}, 
     })
