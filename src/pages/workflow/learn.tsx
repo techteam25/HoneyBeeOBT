@@ -53,7 +53,7 @@ const Learn = () => {
       >
         {arrayData.map((element) => (
           <ReactPlayer
-            url={DOMPurify.sanitize(element.video)}
+            url={`${DOMPurify.sanitize(element.video)}`}
             key={element.key}
           />
         ))}
