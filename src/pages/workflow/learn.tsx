@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
 import ReactPlayer from "react-player";
+import DOMPurify from "dompurify";
 
 interface JSONData {
   name: string;
@@ -51,7 +52,10 @@ const Learn = () => {
         }}
       >
         {arrayData.map((element) => (
-          <ReactPlayer url={element.video} key={element.key} />
+          <ReactPlayer
+            url={DOMPurify.sanitize(element.video)}
+            key={element.key}
+          />
         ))}
       </Box>
       <Link
