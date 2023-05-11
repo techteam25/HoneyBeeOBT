@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import Link from "next/link";
 import { slide as Menu } from "react-burger-menu";
 const HamburgerMenu = () => (
@@ -7,6 +8,14 @@ const HamburgerMenu = () => (
       width={"auto"}
       className="left-0 top-12"
     >
+      <Link
+        id="home-navigation"
+        className="menu-item"
+        data-testid="burger-home-nav"
+        href="/"
+      >
+        <Typography variant="h3">Navigation</Typography>
+      </Link>
       <Link id="home" className="menu-item" data-testid="burger-home" href="/">
         Home
       </Link>
@@ -39,6 +48,51 @@ const HamburgerMenu = () => (
       </Link>
       <Link id="about" className="menu-item" href="/about">
         About
+      </Link>
+      <Link
+        id="home-workflow"
+        className="menu-item"
+        data-testid="burger-home-workflow"
+        href="/workflow"
+      >
+        <Typography variant="h3">Workflow</Typography>
+      </Link>
+      <Link id="workflow-learn" className="menu-item" href="/workflow/learn">
+        Learn
+      </Link>
+      <Link
+        id="workflow-translate"
+        className="menu-item"
+        href="/workflow/translate"
+      >
+        Translate and Revise
+      </Link>
+      <Link
+        id="workflow-naturalness"
+        className="menu-item"
+        href="/workflow/naturalness"
+      >
+        Naturanlness Checks
+      </Link>
+      <Link
+        id="workflow-accuracy"
+        className="menu-item"
+        href="/workflow/accuracy"
+      >
+        Accuracy Check
+      </Link>
+      <Link id="workflow-voice" className="menu-item" href="/workflow/voice">
+        Voice Studio
+      </Link>
+      <Link
+        id="workflow-finalize"
+        className="menu-item"
+        href="/workflow/finalize"
+      >
+        Finalize
+      </Link>
+      <Link id="workflow-review" className="menu-item" href="/workflow/review">
+        Review + Share
       </Link>
     </Menu>
   </div>

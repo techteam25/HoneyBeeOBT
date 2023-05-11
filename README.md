@@ -3,7 +3,7 @@
 # HoneyBeeOBT
 HoneyBee Oral Bible Translation tool
 
-## Live demo available at https://mtt-honeyb.herokuapp.com/ and https://zacpoorman.com/ (Heroku Costs Money, so we will probably be switching to netlify / zacpoorman.com)
+## Live demo available at https://zacpoorman.com/ (Heroku Costs Money, so we will probably be switching to netlify / zacpoorman.com)
 This demo runs of of the OOCAZ fork, but should be updated every day, may make an automation or transfer to techteam deployment
 
 Direction for HoneyBee development:

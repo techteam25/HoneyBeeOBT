@@ -1,6 +1,6 @@
 /** @jest-environment jsdom */
 import { render } from "@testing-library/react";
-import Language from "@/pages/language";
+import Language from "@/components/futureFeatures/language";
 import "@testing-library/jest-dom";
 
 describe("Language", () => {
