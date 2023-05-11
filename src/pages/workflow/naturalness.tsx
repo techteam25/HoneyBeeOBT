@@ -7,7 +7,7 @@ import DOMPurify from "dompurify";
 interface JSONData {
   name: string;
   description: string;
-  link: string;
+  audio: string;
   key: string;
 }
 
@@ -19,7 +19,7 @@ const Naturalness = () => {
     setToggle(false);
     async function getData() {
       if (toggle) {
-        await axios.get("/api/workflow").then((response) => {
+        await axios.get("/api/workflow/naturalness").then((response) => {
           for (let int in response.data) {
             setArrayData((arrayData) => [...arrayData, response.data[int]]);
           }
@@ -41,14 +41,23 @@ const Naturalness = () => {
       </Card>
 
       {arrayData.map((element) => (
-        <Card variant="outlined" sx={{ m: "5vw" }} key={element.key}>
-          <Link href={DOMPurify.sanitize(element.link)}>
-            <CardContent>
-              <Typography variant="h5" sx={{ ml: "10vw" }}>
-                {element.name}
-              </Typography>
-            </CardContent>
-          </Link>
+        <Card
+          style={{
+            display: "flex",
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center",
+            marginLeft: "15vw",
+            marginRight: "15vw",
+            marginTop: "5vh",
+            marginBottom: "5vh",
+          }}
+          variant="outlined"
+          key={element.key}
+        >
+          <CardContent>
+            <audio src={element.audio} controls />
+          </CardContent>
         </Card>
       ))}
       <Link
