@@ -1,8 +1,9 @@
-import { Card, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
 import DOMPurify from "dompurify";
+import AudioRecorder from "@/components/audioRecorder/audioRecorder";
 
 interface JSONData {
   name: string;
@@ -35,29 +36,28 @@ const VoiceStudio = () => {
       <Card sx={{ ml: "15vw", mr: "15vw" }}>
         <CardContent>
           <Typography variant="h3" style={{ textAlign: "center" }}>
-            Voice Studio
+            Accuracy Check
           </Typography>
         </CardContent>
       </Card>
+      <Box
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "5vh",
+        }}
+      >
+        {" "}
+        <AudioRecorder />
+      </Box>
 
-      {arrayData.map((element) => (
-        <Card variant="outlined" sx={{ m: "5vw" }} key={element.key}>
-          <Link href={DOMPurify.sanitize(element.link)}>
-            <CardContent>
-              <Typography variant="h5" sx={{ ml: "10vw" }}>
-                {element.name}
-              </Typography>
-            </CardContent>
-          </Link>
-        </Card>
-      ))}
       <Link
         id="workflow-translate"
         className="menu-item"
         data-testid="burger-workflow-translate"
         href="/workflow/finalize"
       >
-        <Card sx={{ ml: "15vw", mr: "15vw", mb: "5vh" }}>
+        <Card sx={{ ml: "15vw", mr: "15vw", mb: "5vh", mt: "5vh" }}>
           <CardContent>
             <Typography variant="h4" style={{ textAlign: "center" }}>
               Onto Finalize
