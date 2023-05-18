@@ -4,10 +4,10 @@ const AudioRecorder = () => {
   const mimeType = "audio/webm";
   const mediaRecorder = React.useRef(null);
   const [permission, setPermission] = useState<boolean>(false);
-  const [stream, setStream] = useState<MediaStream | null>(null);
+  const [stream, setStream] = useState<MediaStream>(null);
   const [recordingStatus, setRecordingStatus] = React.useState("inactive");
   const [audioChunks, setAudioChunks] = React.useState([]);
-  const [audio, setAudio] = React.useState(null);
+  const [audio, setAudio] = React.useState("empty");
 
   const getMicrophonePermission = async () => {
     if ("MediaRecorder" in window) {
@@ -18,8 +18,9 @@ const AudioRecorder = () => {
         });
         setPermission(true);
         setStream(streamData);
-      } catch (err: any) {
+      } catch (err) {
         alert(err.message);
+        
       }
     } else {
       alert("The MediaRecorder API is not supported in your browser.");
