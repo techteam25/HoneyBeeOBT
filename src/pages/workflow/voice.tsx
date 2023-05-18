@@ -2,7 +2,6 @@ import { Box, Card, CardContent, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
-import DOMPurify from "dompurify";
 import AudioRecorder from "@/components/audioRecorder/audioRecorder";
 
 interface JSONData {
@@ -48,7 +47,6 @@ const VoiceStudio = () => {
         }}
       >
         {" "}
-        <AudioRecorder />
       </Box>
 
       <Link
