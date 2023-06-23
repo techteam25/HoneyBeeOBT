@@ -12,6 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
   });
   return (
     <ThemeProvider theme={darkTheme}>
+      <title>HoneyBee OBT</title>
       <HamburgerMenu />
       <Component {...pageProps} />
     </ThemeProvider>
