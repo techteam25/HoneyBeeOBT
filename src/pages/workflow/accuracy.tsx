@@ -12,10 +12,11 @@ import Link from "next/link";
 import DOMPurify from "dompurify";
 import ReactPlayer from "react-player";
 import AccuracyButton from "@/components/accuracyChecker/accuracyButton";
+import Image from "next/image";
 
 interface JSONData {
   name: string;
-  video: string;
+  image: string;
   passage: string;
   data: string;
   key: string;
@@ -26,7 +27,7 @@ const Accuracy = () => {
   const [arrayData, setArrayData] = React.useState<JSONData[]>([
     {
       name: "Loading",
-      video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      image: "/tomb2.jpg",
       data: "lorem ipsum",
       passage:
         "In those days John the Baptist came, preaching in the wilderness of Judea 2 and saying, “Repent, for the kingdom of heaven has come near.” 3 This is he who was spoken of through the prophet Isaiah:",
@@ -73,11 +74,11 @@ const Accuracy = () => {
           marginBottom: "5vh",
         }}
       >
-        <ReactPlayer
-          url={
-            arrayData[data].video ||
-            "https://www.youtube.com/watch?v=0rIvB3LZiKA"
-          }
+        <Image
+          src={arrayData[data].image || "/tomb2.jpg"}
+          alt={arrayData[data].data || "example description"}
+          width={200}
+          height={200}
         />
       </Box>
       <Card sx={{ ml: "15vw", mr: "15vw" }}>
