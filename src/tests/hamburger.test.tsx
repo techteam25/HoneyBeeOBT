@@ -5,6 +5,7 @@ import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 
 jest.mock("axios");
+jest.mock('next/router', () => require('next-router-mock'));
 
 describe("Home", () => {
   it("renders burger menu", () => {
