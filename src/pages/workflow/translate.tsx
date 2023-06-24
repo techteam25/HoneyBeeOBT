@@ -75,7 +75,7 @@ const Translate = () => {
       >
         <Image
           src={arrayData[data].image || "/tomb2.jpg"}
-          alt={arrayData[data].data || "example description"}
+          alt={arrayData[data].passage || "example description"}
           width={200}
           height={200}
         />
