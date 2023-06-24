@@ -39,7 +39,7 @@ const Translate = () => {
     setToggle(false);
     async function getData() {
       if (toggle) {
-        await axios.get("/api/workflow/translate").then((response) => {
+        await axios.get("/api/workflow/selected").then((response) => {
           setArrayData([]);
           for (let int in response.data) {
             setArrayData((arrayData) => [...arrayData, response.data[int]]);
@@ -75,7 +75,7 @@ const Translate = () => {
       >
         <Image
           src={arrayData[data].image || "/tomb2.jpg"}
-          alt={arrayData[data].data || "example description"}
+          alt={arrayData[data].passage || "example description"}
           width={200}
           height={200}
         />

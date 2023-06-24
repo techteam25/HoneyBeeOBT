@@ -40,7 +40,7 @@ const Accuracy = () => {
     setToggle(false);
     async function getData() {
       if (toggle) {
-        await axios.get("/api/workflow/translate").then((response) => {
+        await axios.get("/api/workflow/selected").then((response) => {
           setArrayData([]);
           for (let int in response.data) {
             setArrayData((arrayData) => [...arrayData, response.data[int]]);
