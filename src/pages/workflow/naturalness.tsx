@@ -19,7 +19,7 @@ const Naturalness = () => {
     setToggle(false);
     async function getData() {
       if (toggle) {
-        await axios.get("/api/workflow/naturalness").then((response) => {
+        await axios.get("/api/workflow/selected").then((response) => {
           for (let int in response.data) {
             setArrayData((arrayData) => [...arrayData, response.data[int]]);
           }
