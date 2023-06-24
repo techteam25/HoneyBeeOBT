@@ -26,6 +26,7 @@
     "next": "13.3.0",
     "node-mocks-http": "^1.12.2",
     "react": "18.2.0",
+    "react-audio-voice-recorder": "^1.2.1",
     "react-burger-menu": "^3.0.9",
     "react-dom": "18.2.0",
     "react-player": "^2.12.0",

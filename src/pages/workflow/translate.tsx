@@ -9,16 +9,22 @@ import {
 import React, { useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
-import DOMPurify from "dompurify";
-import ReactPlayer from "react-player";
+import { AudioRecorder } from "react-audio-voice-recorder";
 import Image from "next/image";
 
 interface JSONData {
   name: string;
   image: string;
+  audio: string;
   passage: string;
   data: string;
   key: string;
+}
+
+interface AudioData {
+  index: number;
+  audio: string;
+  title: string;
 }
 
 const Translate = () => {
@@ -27,6 +33,7 @@ const Translate = () => {
     {
       name: "Loading",
       image: "",
+      audio: "",
       data: "lorem ipsum",
       passage:
         "In those days John the Baptist came, preaching in the wilderness of Judea 2 and saying, “Repent, for the kingdom of heaven has come near.” 3 This is he who was spoken of through the prophet Isaiah:",
@@ -34,6 +41,7 @@ const Translate = () => {
     },
   ]);
   const [data, setData] = React.useState(0);
+  const [audioRecordings, setAudioRecordings] = React.useState<AudioData[]>([]);
 
   useEffect(() => {
     setToggle(false);
@@ -51,6 +59,17 @@ const Translate = () => {
     getData();
     console.log(arrayData);
   }, [arrayData, toggle]);
+
+  const addAudioElement = (blob: Blob | MediaSource) => {
+    const url = URL.createObjectURL(blob);
+    arrayData[data].audio = url;
+    const packer = {
+      index: data,
+      audio: url,
+      title: "Need to add naming function,",
+    };
+    setAudioRecordings((audioRecordings) => [...audioRecordings, packer]);
+  };
 
   return (
     <div className="main-contianer" style={{ paddingTop: "5vh" }}>
@@ -93,6 +112,27 @@ const Translate = () => {
           </Typography>
         </CardContent>
       </Card>
+      <Card
+        style={{
+          display: "flex",
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          marginLeft: "15vw",
+          marginRight: "15vw",
+          marginTop: "5vh",
+          marginBottom: "5vh",
+        }}
+        variant="outlined"
+      >
+        <CardContent>
+          {audioRecordings.map((element) => {
+            if (element.audio != "test") {
+              return <audio src={element.audio} key={element.audio} controls />;
+            }
+          })}
+        </CardContent>
+      </Card>
       <Box
         style={{
           display: "flex",
@@ -118,6 +158,24 @@ const Translate = () => {
           Go forward a Section
         </Button>
       </Box>
+      <Box
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "5vh",
+        }}
+      >
+        <AudioRecorder
+          onRecordingComplete={addAudioElement}
+          audioTrackConstraints={{
+            noiseSuppression: true,
+            echoCancellation: true,
+          }}
+          downloadOnSavePress={true}
+          downloadFileExtension="mp3"
+        />
+      </Box>
+
       <Link
         id="workflow-translate"
         className="menu-item"
