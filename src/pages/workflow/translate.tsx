@@ -127,7 +127,7 @@ const Translate = () => {
       >
         <CardContent>
           {audioRecordings.map((element) => {
-            if (element.audio != "test") {
+            if (element.index == data) {
               return <audio src={element.audio} key={element.audio} controls />;
             }
           })}
