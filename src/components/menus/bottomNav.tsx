@@ -1,6 +1,16 @@
 import { Box, Button } from "@mui/material";
 import Link from "next/link";
 
+/* TODO: Add styling for mobile so that the layout of the bottuns will flip to vertical
+    This code should work:
+        @media screen (max-width: 480px){
+            .signup-wide #signupForm{
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+*/
+
 const BottomNav = () => {
   return (
     <Box
