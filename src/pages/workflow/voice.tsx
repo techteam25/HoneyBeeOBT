@@ -12,6 +12,7 @@ import Link from "next/link";
 import DOMPurify from "dompurify";
 import ReactPlayer from "react-player";
 import Image from "next/image";
+import BottomNav from "@/components/menus/bottomNav";
 
 interface JSONData {
   name: string;
@@ -118,20 +119,7 @@ const VoiceStudio = () => {
           Go forward a Section
         </Button>
       </Box>
-      <Link
-        id="workflow-translate"
-        className="menu-item"
-        data-testid="burger-workflow-translate"
-        href="/workflow/finalize"
-      >
-        <Card sx={{ ml: "15vw", mr: "15vw", mb: "5vh", mt: "5vh" }}>
-          <CardContent>
-            <Typography variant="h4" style={{ textAlign: "center" }}>
-              Finalize
-            </Typography>
-          </CardContent>
-        </Card>
-      </Link>
+      <BottomNav />
     </div>
   );
 };

@@ -11,6 +11,7 @@ import axios from "axios";
 import Link from "next/link";
 import { AudioRecorder } from "react-audio-voice-recorder";
 import Image from "next/image";
+import BottomNav from "@/components/menus/bottomNav";
 
 interface JSONData {
   name: string;
@@ -175,21 +176,7 @@ const Translate = () => {
           downloadFileExtension="mp3"
         />
       </Box>
-
-      <Link
-        id="workflow-translate"
-        className="menu-item"
-        data-testid="burger-workflow-translate"
-        href="/workflow/naturalness"
-      >
-        <Card sx={{ ml: "15vw", mr: "15vw", mb: "5vh", mt: "5vh" }}>
-          <CardContent>
-            <Typography variant="h4" style={{ textAlign: "center" }}>
-              Onto Naturalness
-            </Typography>
-          </CardContent>
-        </Card>
-      </Link>
+      <BottomNav />
     </div>
   );
 };

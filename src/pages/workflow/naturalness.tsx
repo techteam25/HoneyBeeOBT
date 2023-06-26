@@ -4,6 +4,7 @@ import axios from "axios";
 import Link from "next/link";
 import DOMPurify from "dompurify";
 import Image from "next/image";
+import BottomNav from "@/components/menus/bottomNav";
 
 interface JSONData {
   name: string;
@@ -129,20 +130,7 @@ const Naturalness = () => {
           Go forward a Section
         </Button>
       </Box>
-      <Link
-        id="workflow-translate"
-        className="menu-item"
-        data-testid="burger-workflow-translate"
-        href="/workflow/accuracy"
-      >
-        <Card sx={{ ml: "15vw", mr: "15vw", mb: "5vh", mt: "5vh" }}>
-          <CardContent>
-            <Typography variant="h4" style={{ textAlign: "center" }}>
-              Onto Accuracy
-            </Typography>
-          </CardContent>
-        </Card>
-      </Link>
+      <BottomNav />
     </div>
   );
 };
