@@ -16,6 +16,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
 import DOMPurify from "dompurify";
+import BottomNav from "@/components/menus/bottomNav";
 
 interface JSONData {
   name: string;
@@ -116,20 +117,7 @@ const Finalize = () => {
           </RadioGroup>
         </FormControl>
       </Box>
-      <Link
-        id="workflow-translate"
-        className="menu-item"
-        data-testid="burger-workflow"
-        href="/workflow/review"
-      >
-        <Card sx={{ ml: "15vw", mr: "15vw", mb: "5vh" }}>
-          <CardContent>
-            <Typography variant="h4" style={{ textAlign: "center" }}>
-              Onto Review
-            </Typography>
-          </CardContent>
-        </Card>
-      </Link>
+      <BottomNav />
     </div>
   );
 };

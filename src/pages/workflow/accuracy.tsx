@@ -13,6 +13,7 @@ import DOMPurify from "dompurify";
 import ReactPlayer from "react-player";
 import AccuracyButton from "@/components/accuracyChecker/accuracyButton";
 import Image from "next/image";
+import BottomNav from "@/components/menus/bottomNav";
 
 interface JSONData {
   name: string;
@@ -129,20 +130,7 @@ const Accuracy = () => {
         <AccuracyButton />
       </Box>
 
-      <Link
-        id="workflow-voice"
-        className="menu-item"
-        data-testid="burger-workflow-translate"
-        href="/workflow/voice"
-      >
-        <Card sx={{ ml: "15vw", mr: "15vw", mb: "5vh", mt: "5vh" }}>
-          <CardContent>
-            <Typography variant="h4" style={{ textAlign: "center" }}>
-              Onto Voice Studio
-            </Typography>
-          </CardContent>
-        </Card>
-      </Link>
+      <BottomNav />
     </div>
   );
 };

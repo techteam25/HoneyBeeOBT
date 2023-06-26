@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
 import DOMPurify from "dompurify";
+import BottomNav from "@/components/menus/bottomNav";
 
 interface JSONData {
   name: string;
@@ -51,6 +52,7 @@ const Review = () => {
           </Link>
         </Card>
       ))}
+      <BottomNav />
     </div>
   );
 };
