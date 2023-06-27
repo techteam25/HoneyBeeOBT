@@ -4,6 +4,7 @@ import axios from "axios";
 import Link from "next/link";
 import DOMPurify from "dompurify";
 import BottomNav from "@/components/menus/bottomNav";
+import TitleCard from "@/components/cards/titleCard";
 
 interface JSONData {
   name: string;
@@ -33,13 +34,7 @@ const Review = () => {
 
   return (
     <div className="main-contianer" style={{ paddingTop: "5vh" }}>
-      <Card sx={{ ml: "15vw", mr: "15vw" }}>
-        <CardContent>
-          <Typography variant="h3" style={{ textAlign: "center" }}>
-            Review
-          </Typography>
-        </CardContent>
-      </Card>
+      <TitleCard title="Review" />
 
       {arrayData.map((element) => (
         <Card variant="outlined" sx={{ m: "5vw" }} key={element.key}>

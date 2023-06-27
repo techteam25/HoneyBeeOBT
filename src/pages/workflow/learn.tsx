@@ -5,6 +5,7 @@ import Link from "next/link";
 import ReactPlayer from "react-player";
 import DOMPurify from "dompurify";
 import BottomNav from "@/components/menus/bottomNav";
+import TitleCard from "@/components/cards/titleCard";
 
 interface JSONData {
   name: string;
@@ -33,13 +34,7 @@ const Learn = () => {
 
   return (
     <div className="main-contianer" style={{ paddingTop: "5vh" }}>
-      <Card sx={{ ml: "15vw", mr: "15vw" }}>
-        <CardContent>
-          <Typography variant="h3" style={{ textAlign: "center" }}>
-            Learn
-          </Typography>
-        </CardContent>
-      </Card>
+      <TitleCard title="Learn" />
       <Box
         style={{
           display: "flex",

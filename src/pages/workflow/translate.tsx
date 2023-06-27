@@ -15,6 +15,7 @@ import BottomNav from "@/components/menus/bottomNav";
 import PageNav from "@/components/menus/pageNav";
 import ScriptureCards from "@/components/cards/scriptureCards";
 import ImageCards from "@/components/cards/imageCards";
+import TitleCard from "@/components/cards/titleCard";
 
 interface JSONData {
   name: string;
@@ -77,13 +78,7 @@ const Translate = () => {
 
   return (
     <div className="main-contianer" style={{ paddingTop: "5vh" }}>
-      <Card sx={{ ml: "15vw", mr: "15vw" }}>
-        <CardContent>
-          <Typography variant="h3" style={{ textAlign: "center" }}>
-            Translate
-          </Typography>
-        </CardContent>
-      </Card>
+      <TitleCard title="Translate" />
       <ImageCards
         image={arrayData[data].image}
         description={arrayData[data].data}
