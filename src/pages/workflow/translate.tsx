@@ -1,6 +1,6 @@
 import { Box, Card, CardContent } from "@mui/material";
 import React, { useEffect } from "react";
-import WorkflowLayout from './layout';
+import WorkflowLayout from "./layout";
 import axios from "axios";
 import { AudioRecorder } from "react-audio-voice-recorder";
 import BottomNav from "@/components/menus/bottomNav";
@@ -54,7 +54,6 @@ const Translate = () => {
       }
     }
     getData();
-    console.log(arrayData);
   }, [arrayData, toggle]);
 
   const addAudioElement = (blob: Blob | MediaSource) => {
