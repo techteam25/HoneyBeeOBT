@@ -46,12 +46,10 @@ const Learn = () => {
           marginBottom: "5vh",
         }}
       >
-        {arrayData.map((element) => (
-          <ReactPlayer
-            url={DOMPurify.sanitize(`${element.video}`)}
-            key={element.key}
-          />
-        ))}
+        {arrayData.map((element) => {
+          let address = DOMPurify.sanitize(element.video);
+          return <ReactPlayer url={address} key={element.key} />;
+        })}
       </Box>
       <BottomNav />
     </div>
