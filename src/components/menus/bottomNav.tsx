@@ -1,26 +1,12 @@
-import { Box, Button } from "@mui/material";
+import { Button } from "@mui/material";
 import Link from "next/link";
 
-/* TODO: Add styling for mobile so that the layout of the bottuns will flip to vertical
-    This code should work:
-        @media screen (max-width: 480px){
-            .signup-wide #signupForm{
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-*/
+import styles from './BottomNav.module.css';
 
 const BottomNav = () => {
+
   return (
-    <Box
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        marginTop: "5vh",
-        marginBottom: "5vh",
-      }}
-    >
+    <div className={styles.bottomNavContainer}>
       <Link href="/workflow/learn">
         <Button sx={{ backgroundColor: "#00cc88" }} variant="contained">
           Learn
@@ -74,7 +60,7 @@ const BottomNav = () => {
           Review
         </Button>
       </Link>
-    </Box>
+    </div>
   );
 };
 
