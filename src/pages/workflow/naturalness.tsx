@@ -7,6 +7,7 @@ import Image from "next/image";
 import BottomNav from "@/components/menus/bottomNav";
 import PageNav from "@/components/menus/pageNav";
 import ScriptureCards from "@/components/cards/scriptureCards";
+import ImageCards from "@/components/cards/imageCards";
 
 interface JSONData {
   name: string;
@@ -58,25 +59,10 @@ const Naturalness = () => {
           </Typography>
         </CardContent>
       </Card>
-      <Box
-        style={{
-          display: "flex",
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          marginLeft: "15vw",
-          marginRight: "15vw",
-          marginTop: "5vh",
-          marginBottom: "5vh",
-        }}
-      >
-        <Image
-          src={arrayData[data].image || "/tomb2.jpg"}
-          alt={arrayData[data].passage || "example description"}
-          width={200}
-          height={200}
-        />
-      </Box>
+      <ImageCards
+        image={arrayData[data].image}
+        description={arrayData[data].description}
+      />
       <ScriptureCards
         name={arrayData[data].name}
         passage={arrayData[data].passage}
@@ -98,7 +84,7 @@ const Naturalness = () => {
           <audio src={arrayData[data].audio} controls />
         </CardContent>
       </Card>
-      <PageNav page={data} setPage={setData} length={arrayData} />
+      <PageNav page={data} setPage={setData} length={arrayData.length} />
       <BottomNav />
     </div>
   );

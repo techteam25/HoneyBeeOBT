@@ -3,7 +3,7 @@ import { Box, Button } from "@mui/material";
 const PageNav = (props: {
   page: number;
   setPage: (arg0: number) => void;
-  length: string | any[];
+  length: number;
 }) => {
   return (
     <Box
@@ -24,8 +24,7 @@ const PageNav = (props: {
       </Button>
       <Button
         onClick={() => {
-          if (props.page < props.length.length - 1)
-            props.setPage(props.page + 1);
+          if (props.page < props.length - 1) props.setPage(props.page + 1);
         }}
         variant="contained"
       >
