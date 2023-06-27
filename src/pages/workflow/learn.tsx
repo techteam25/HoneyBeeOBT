@@ -1,7 +1,6 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import axios from "axios";
-import Link from "next/link";
 import ReactPlayer from "react-player";
 import DOMPurify from "dompurify";
 import BottomNav from "@/components/menus/bottomNav";
@@ -49,7 +48,7 @@ const Learn = () => {
       >
         {arrayData.map((element) => (
           <ReactPlayer
-            url={`${DOMPurify.sanitize(element.video)}`}
+            url={DOMPurify.sanitize(element.video)}
             key={element.key}
           />
         ))}

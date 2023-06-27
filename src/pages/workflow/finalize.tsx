@@ -14,8 +14,6 @@ import {
 } from "@mui/material";
 import React, { useEffect } from "react";
 import axios from "axios";
-import Link from "next/link";
-import DOMPurify from "dompurify";
 import BottomNav from "@/components/menus/bottomNav";
 import TitleCard from "@/components/cards/titleCard";
 

@@ -1,17 +1,5 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  CardHeader,
-  Typography,
-} from "@mui/material";
 import React, { useEffect } from "react";
 import axios from "axios";
-import Link from "next/link";
-import DOMPurify from "dompurify";
-import ReactPlayer from "react-player";
-import Image from "next/image";
 import BottomNav from "@/components/menus/bottomNav";
 import PageNav from "@/components/menus/pageNav";
 import ScriptureCards from "@/components/cards/scriptureCards";
