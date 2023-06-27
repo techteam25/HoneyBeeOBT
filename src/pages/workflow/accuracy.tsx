@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import WorkflowLayout from './layout';
+import WorkflowLayout from "./layout";
 import axios from "axios";
 import AccuracyButton from "@/components/accuracyChecker/accuracyButton";
 import BottomNav from "@/components/menus/bottomNav";
@@ -44,7 +44,6 @@ const Accuracy = () => {
       }
     }
     getData();
-    console.log(arrayData);
   }, [arrayData, toggle]);
 
   return (

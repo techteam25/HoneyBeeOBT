@@ -1,6 +1,6 @@
 import { Box, Button, Card, CardContent, Typography } from "@mui/material";
 import React, { useEffect } from "react";
-import WorkflowLayout from './layout';
+import WorkflowLayout from "./layout";
 import axios from "axios";
 import BottomNav from "@/components/menus/bottomNav";
 import PageNav from "@/components/menus/pageNav";
@@ -46,7 +46,6 @@ const Naturalness = () => {
       }
     }
     getData();
-    console.log(arrayData);
   }, [arrayData, toggle]);
 
   return (
