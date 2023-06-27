@@ -12,6 +12,7 @@ import Link from "next/link";
 import { AudioRecorder } from "react-audio-voice-recorder";
 import Image from "next/image";
 import BottomNav from "@/components/menus/bottomNav";
+import PageNav from "@/components/menus/pageNav";
 
 interface JSONData {
   name: string;
@@ -134,31 +135,7 @@ const Translate = () => {
           })}
         </CardContent>
       </Card>
-      <Box
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "5vh",
-        }}
-      >
-        <Button
-          sx={{ mr: "5vw" }}
-          onClick={() => {
-            if (data > 0) setData(data - 1);
-          }}
-          variant="contained"
-        >
-          Go back a Section
-        </Button>
-        <Button
-          onClick={() => {
-            if (data < arrayData.length - 1) setData(data + 1);
-          }}
-          variant="contained"
-        >
-          Go forward a Section
-        </Button>
-      </Box>
+      <PageNav data={data} setData={setData} arrayData={arrayData} />
       <Box
         style={{
           display: "flex",

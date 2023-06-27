@@ -14,6 +14,7 @@ import ReactPlayer from "react-player";
 import AccuracyButton from "@/components/accuracyChecker/accuracyButton";
 import Image from "next/image";
 import BottomNav from "@/components/menus/bottomNav";
+import PageNav from "@/components/menus/pageNav";
 
 interface JSONData {
   name: string;
@@ -95,41 +96,7 @@ const Accuracy = () => {
           </Typography>
         </CardContent>
       </Card>
-      <Box
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "5vh",
-        }}
-      >
-        <Button
-          sx={{ mr: "5vw" }}
-          onClick={() => {
-            if (data > 0) setData(data - 1);
-          }}
-          variant="contained"
-        >
-          Go back a Section
-        </Button>
-        <Button
-          onClick={() => {
-            if (data < arrayData.length - 1) setData(data + 1);
-          }}
-          variant="contained"
-        >
-          Go forward a Section
-        </Button>
-      </Box>
-      <Box
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "5vh",
-        }}
-      >
-        <AccuracyButton />
-      </Box>
-
+      <PageNav data={data} setData={setData} arrayData={arrayData} />
       <BottomNav />
     </div>
   );
