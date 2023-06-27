@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect } from "react";
+import WorkflowLayout from './layout';
 import axios from "axios";
 import Link from "next/link";
 import DOMPurify from "dompurify";
@@ -58,7 +59,7 @@ const VoiceStudio = () => {
   }, [arrayData, toggle]);
 
   return (
-    <div className="main-contianer" style={{ paddingTop: "5vh" }}>
+    <WorkflowLayout>
       <TitleCard title="Voice Studio" />
       <ImageCards
         image={arrayData[data].image}
@@ -69,8 +70,7 @@ const VoiceStudio = () => {
         passage={arrayData[data].passage}
       />
       <PageNav page={data} setPage={setData} length={arrayData.length} />
-      <BottomNav />
-    </div>
+    </WorkflowLayout>
   );
 };
 

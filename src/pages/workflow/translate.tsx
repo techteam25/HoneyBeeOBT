@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect } from "react";
+import WorkflowLayout from './layout';
 import axios from "axios";
 import Link from "next/link";
 import { AudioRecorder } from "react-audio-voice-recorder";
@@ -77,7 +78,7 @@ const Translate = () => {
   };
 
   return (
-    <div className="main-contianer" style={{ paddingTop: "5vh" }}>
+    <WorkflowLayout>
       <TitleCard title="Translate" />
       <ImageCards
         image={arrayData[data].image}
@@ -126,8 +127,7 @@ const Translate = () => {
           downloadFileExtension="mp3"
         />
       </Box>
-      <BottomNav />
-    </div>
+    </WorkflowLayout>
   );
 };
 
