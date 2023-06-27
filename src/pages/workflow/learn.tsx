@@ -47,8 +47,14 @@ const Learn = () => {
         }}
       >
         {arrayData.map((element) => {
-          let address = DOMPurify.sanitize(element.video);
-          return <ReactPlayer url={address} key={element.key} />;
+          const address: string = DOMPurify.sanitize(element.video);
+          const address2 = address.split("https://youtube.com/");
+          return (
+            <ReactPlayer
+              url={`https://youtube.com/ + ${address2}`}
+              key={element.key}
+            />
+          );
         })}
       </Box>
       <BottomNav />
