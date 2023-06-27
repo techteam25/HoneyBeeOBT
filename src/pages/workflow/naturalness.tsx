@@ -6,6 +6,9 @@ import DOMPurify from "dompurify";
 import Image from "next/image";
 import BottomNav from "@/components/menus/bottomNav";
 import PageNav from "@/components/menus/pageNav";
+import ScriptureCards from "@/components/cards/scriptureCards";
+import ImageCards from "@/components/cards/imageCards";
+import TitleCard from "@/components/cards/titleCard";
 
 interface JSONData {
   name: string;
@@ -50,45 +53,15 @@ const Naturalness = () => {
 
   return (
     <div className="main-contianer" style={{ paddingTop: "5vh" }}>
-      <Card sx={{ ml: "15vw", mr: "15vw" }}>
-        <CardContent>
-          <Typography variant="h3" style={{ textAlign: "center" }}>
-            Naturalness
-          </Typography>
-        </CardContent>
-      </Card>
-      <Box
-        style={{
-          display: "flex",
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          marginLeft: "15vw",
-          marginRight: "15vw",
-          marginTop: "5vh",
-          marginBottom: "5vh",
-        }}
-      >
-        <Image
-          src={arrayData[data].image || "/tomb2.jpg"}
-          alt={arrayData[data].passage || "example description"}
-          width={200}
-          height={200}
-        />
-      </Box>
-      <Card sx={{ ml: "15vw", mr: "15vw" }}>
-        <Typography
-          variant="h3"
-          style={{ marginTop: "5vh", textAlign: "center" }}
-        >
-          {arrayData[data].name}
-        </Typography>
-        <CardContent>
-          <Typography variant="h5" style={{ textAlign: "center" }}>
-            {arrayData[data].passage}
-          </Typography>
-        </CardContent>
-      </Card>
+      <TitleCard title="Naturalness Check" />
+      <ImageCards
+        image={arrayData[data].image}
+        description={arrayData[data].description}
+      />
+      <ScriptureCards
+        name={arrayData[data].name}
+        passage={arrayData[data].passage}
+      />
       <Card
         style={{
           display: "flex",
@@ -106,7 +79,7 @@ const Naturalness = () => {
           <audio src={arrayData[data].audio} controls />
         </CardContent>
       </Card>
-      <PageNav data={data} setData={setData} arrayData={arrayData} />
+      <PageNav page={data} setPage={setData} length={arrayData.length} />
       <BottomNav />
     </div>
   );

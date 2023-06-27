@@ -1,9 +1,9 @@
 import { Box, Button } from "@mui/material";
 
 const PageNav = (props: {
-  data: number;
-  setData: (arg0: number) => void;
-  arrayData: string | any[];
+  page: number;
+  setPage: (arg0: number) => void;
+  length: number;
 }) => {
   return (
     <Box
@@ -16,7 +16,7 @@ const PageNav = (props: {
       <Button
         sx={{ mr: "5vw" }}
         onClick={() => {
-          if (props.data > 0) props.setData(props.data - 1);
+          if (props.page > 0) props.setPage(props.page - 1);
         }}
         variant="contained"
       >
@@ -24,8 +24,7 @@ const PageNav = (props: {
       </Button>
       <Button
         onClick={() => {
-          if (props.data < props.arrayData.length - 1)
-            props.setData(props.data + 1);
+          if (props.page < props.length - 1) props.setPage(props.page + 1);
         }}
         variant="contained"
       >
