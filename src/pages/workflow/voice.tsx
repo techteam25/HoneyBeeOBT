@@ -14,6 +14,7 @@ import ReactPlayer from "react-player";
 import Image from "next/image";
 import BottomNav from "@/components/menus/bottomNav";
 import PageNav from "@/components/menus/pageNav";
+import ScriptureCards from "@/components/cards/scriptureCards";
 
 interface JSONData {
   name: string;
@@ -82,20 +83,11 @@ const VoiceStudio = () => {
           height={200}
         />
       </Box>
-      <Card sx={{ ml: "15vw", mr: "15vw" }}>
-        <Typography
-          variant="h3"
-          style={{ marginTop: "5vh", textAlign: "center" }}
-        >
-          {arrayData[data].name}
-        </Typography>
-        <CardContent>
-          <Typography variant="h5" style={{ textAlign: "center" }}>
-            {arrayData[data].passage}
-          </Typography>
-        </CardContent>
-      </Card>
-      <PageNav data={data} setData={setData} arrayData={arrayData} />
+      <ScriptureCards
+        name={arrayData[data].name}
+        passage={arrayData[data].passage}
+      />
+      <PageNav page={data} setPage={setData} length={arrayData} />
       <BottomNav />
     </div>
   );

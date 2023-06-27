@@ -6,6 +6,7 @@ import DOMPurify from "dompurify";
 import Image from "next/image";
 import BottomNav from "@/components/menus/bottomNav";
 import PageNav from "@/components/menus/pageNav";
+import ScriptureCards from "@/components/cards/scriptureCards";
 
 interface JSONData {
   name: string;
@@ -76,19 +77,10 @@ const Naturalness = () => {
           height={200}
         />
       </Box>
-      <Card sx={{ ml: "15vw", mr: "15vw" }}>
-        <Typography
-          variant="h3"
-          style={{ marginTop: "5vh", textAlign: "center" }}
-        >
-          {arrayData[data].name}
-        </Typography>
-        <CardContent>
-          <Typography variant="h5" style={{ textAlign: "center" }}>
-            {arrayData[data].passage}
-          </Typography>
-        </CardContent>
-      </Card>
+      <ScriptureCards
+        name={arrayData[data].name}
+        passage={arrayData[data].passage}
+      />
       <Card
         style={{
           display: "flex",
@@ -106,7 +98,7 @@ const Naturalness = () => {
           <audio src={arrayData[data].audio} controls />
         </CardContent>
       </Card>
-      <PageNav data={data} setData={setData} arrayData={arrayData} />
+      <PageNav page={data} setPage={setData} length={arrayData} />
       <BottomNav />
     </div>
   );
