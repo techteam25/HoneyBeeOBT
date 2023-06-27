@@ -1,5 +1,6 @@
 import { Card, CardContent, Typography } from "@mui/material";
 import React, { useEffect } from "react";
+import WorkflowLayout from './layout';
 import axios from "axios";
 import Link from "next/link";
 import DOMPurify from "dompurify";
@@ -33,7 +34,7 @@ const Review = () => {
   }, [arrayData, toggle]);
 
   return (
-    <div className="main-contianer" style={{ paddingTop: "5vh" }}>
+    <WorkflowLayout>
       <TitleCard title="Review" />
 
       {arrayData.map((element) => (
@@ -47,8 +48,7 @@ const Review = () => {
           </Link>
         </Card>
       ))}
-      <BottomNav />
-    </div>
+    </WorkflowLayout>
   );
 };
 

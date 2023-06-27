@@ -1,5 +1,6 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
-import React, { useEffect } from "react";
+import React, { useEffect } from "react";;
+import WorkflowLayout from './layout';
 import axios from "axios";
 import Link from "next/link";
 import ReactPlayer from "react-player";
@@ -33,7 +34,7 @@ const Learn = () => {
   }, [arrayData, toggle]);
 
   return (
-    <div className="main-contianer" style={{ paddingTop: "5vh" }}>
+    <WorkflowLayout>
       <TitleCard title="Learn" />
       <Box
         style={{
@@ -54,8 +55,7 @@ const Learn = () => {
           />
         ))}
       </Box>
-      <BottomNav />
-    </div>
+    </WorkflowLayout>
   );
 };
 

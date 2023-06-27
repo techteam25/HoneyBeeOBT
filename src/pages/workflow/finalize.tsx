@@ -13,6 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect } from "react";
+import WorkflowLayout from './layout';
 import axios from "axios";
 import Link from "next/link";
 import DOMPurify from "dompurify";
@@ -46,7 +47,7 @@ const Finalize = () => {
   }, [arrayData, toggle]);
 
   return (
-    <div className="main-contianer" style={{ paddingTop: "5vh" }}>
+    <WorkflowLayout>
       <TitleCard title="Finalize" />
       <Box
         style={{
@@ -112,8 +113,7 @@ const Finalize = () => {
           </RadioGroup>
         </FormControl>
       </Box>
-      <BottomNav />
-    </div>
+    </WorkflowLayout>
   );
 };
 
