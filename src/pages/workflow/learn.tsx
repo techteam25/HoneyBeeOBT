@@ -2,7 +2,6 @@ import { Box, Card, CardContent, Typography } from "@mui/material";
 import React, { useEffect } from "react";;
 import WorkflowLayout from './layout';
 import axios from "axios";
-import Link from "next/link";
 import ReactPlayer from "react-player";
 import DOMPurify from "dompurify";
 import BottomNav from "@/components/menus/bottomNav";
@@ -48,12 +47,16 @@ const Learn = () => {
           marginBottom: "5vh",
         }}
       >
-        {arrayData.map((element) => (
-          <ReactPlayer
-            url={`${DOMPurify.sanitize(element.video)}`}
-            key={element.key}
-          />
-        ))}
+        {arrayData.map((element) => {
+          const address: string = DOMPurify.sanitize(element.video);
+          const address2 = address.split("https://youtube.com/");
+          return (
+            <ReactPlayer
+              url={`https://youtube.com/ + ${address2}`}
+              key={element.key}
+            />
+          );
+        })}
       </Box>
     </WorkflowLayout>
   );

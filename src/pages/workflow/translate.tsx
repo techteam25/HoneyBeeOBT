@@ -1,17 +1,8 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  CardHeader,
-  Typography,
-} from "@mui/material";
+import { Box, Card, CardContent } from "@mui/material";
 import React, { useEffect } from "react";
 import WorkflowLayout from './layout';
 import axios from "axios";
-import Link from "next/link";
 import { AudioRecorder } from "react-audio-voice-recorder";
-import Image from "next/image";
 import BottomNav from "@/components/menus/bottomNav";
 import PageNav from "@/components/menus/pageNav";
 import ScriptureCards from "@/components/cards/scriptureCards";
