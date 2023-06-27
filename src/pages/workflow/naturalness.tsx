@@ -1,5 +1,6 @@
 import { Box, Button, Card, CardContent, Typography } from "@mui/material";
 import React, { useEffect } from "react";
+import WorkflowLayout from './layout';
 import axios from "axios";
 import BottomNav from "@/components/menus/bottomNav";
 import PageNav from "@/components/menus/pageNav";
@@ -49,7 +50,7 @@ const Naturalness = () => {
   }, [arrayData, toggle]);
 
   return (
-    <div className="main-contianer" style={{ paddingTop: "5vh" }}>
+    <WorkflowLayout>
       <TitleCard title="Naturalness Check" />
       <ImageCards
         image={arrayData[data].image}
@@ -77,8 +78,7 @@ const Naturalness = () => {
         </CardContent>
       </Card>
       <PageNav page={data} setPage={setData} length={arrayData.length} />
-      <BottomNav />
-    </div>
+    </WorkflowLayout>
   );
 };
 

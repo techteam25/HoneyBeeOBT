@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import WorkflowLayout from './layout';
 import axios from "axios";
 import AccuracyButton from "@/components/accuracyChecker/accuracyButton";
 import BottomNav from "@/components/menus/bottomNav";
@@ -47,7 +48,7 @@ const Accuracy = () => {
   }, [arrayData, toggle]);
 
   return (
-    <div className="main-contianer" style={{ paddingTop: "5vh" }}>
+    <WorkflowLayout>
       <TitleCard title="Accuracy Check" />
       <ImageCards
         image={arrayData[data].image}
@@ -59,8 +60,7 @@ const Accuracy = () => {
       />
       <PageNav page={data} setPage={setData} length={arrayData.length} />
       <AccuracyButton />
-      <BottomNav />
-    </div>
+    </WorkflowLayout>
   );
 };
 
