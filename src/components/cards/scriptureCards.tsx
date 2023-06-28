@@ -1,19 +1,18 @@
-import { Card, CardContent, Typography } from "@mui/material";
+import { Card } from "./card";
+import { Typography } from '../UI/Typography';
 
 const ScriptureCards = (props: { name: string; passage: string }) => {
   return (
-    <Card sx={{ ml: "15vw", mr: "15vw" }}>
+    <Card>
       <Typography
-        variant="h3"
-        style={{ marginTop: "5vh", textAlign: "center" }}
+        as="h3"
       >
         {props.name}
       </Typography>
-      <CardContent>
-        <Typography variant="h5" style={{ textAlign: "center" }}>
-          {props.passage}
-        </Typography>
-      </CardContent>
+      <Typography as="p"
+      >
+        {props.passage}
+      </Typography>
     </Card>
   );
 };

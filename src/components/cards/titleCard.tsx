@@ -1,14 +1,12 @@
-import { Card, CardContent, Typography } from "@mui/material";
+import { Typography } from '../UI/Typography/Typography';
+import { Card } from './card';
+import styles from './cards.module.css';
 
 const TitleCard = (props: { title: string }) => {
   return (
-    <Card sx={{ ml: "15vw", mr: "15vw" }}>
-      <CardContent>
-        <Typography variant="h3" style={{ textAlign: "center" }}>
-          {props.title}
-        </Typography>
-      </CardContent>
+    <Card>
+      <Typography as="h2" className={styles.titleCard}>{props.title}</Typography>
     </Card>
-  );
+  )
 };
 export default TitleCard;
