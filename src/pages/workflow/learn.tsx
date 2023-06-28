@@ -4,7 +4,6 @@ import WorkflowLayout from './layout';
 import axios from "axios";
 import ReactPlayer from "react-player";
 import DOMPurify from "dompurify";
-import BottomNav from "@/components/menus/bottomNav";
 import TitleCard from "@/components/cards/titleCard";
 
 interface JSONData {

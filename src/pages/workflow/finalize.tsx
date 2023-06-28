@@ -15,7 +15,6 @@ import {
 import React, { useEffect } from "react";
 import WorkflowLayout from './layout';
 import axios from "axios";
-import BottomNav from "@/components/menus/bottomNav";
 import TitleCard from "@/components/cards/titleCard";
 
 interface JSONData {
