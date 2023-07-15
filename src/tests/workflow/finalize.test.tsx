@@ -2,6 +2,7 @@
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Finalize from "@/pages/workflow/finalize";
+jest.mock("next/router");
 
 describe("Finalize", () => {
   it("renders Finalize panel", () => {
