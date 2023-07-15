@@ -13,9 +13,10 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect } from "react";
-import WorkflowLayout from './layout';
+import WorkflowLayout from "./layout";
 import axios from "axios";
 import TitleCard from "@/components/cards/titleCard";
+import { useRouter } from "next/router";
 
 interface JSONData {
   name: string;
@@ -27,6 +28,7 @@ interface JSONData {
 const Finalize = () => {
   const [toggle, setToggle] = React.useState(true);
   const [arrayData, setArrayData] = React.useState<JSONData[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     setToggle(false);
@@ -44,7 +46,7 @@ const Finalize = () => {
   }, [arrayData, toggle]);
 
   return (
-    <WorkflowLayout>
+    <WorkflowLayout route={router.pathname}>
       <TitleCard title="Finalize" />
       <Box
         style={{

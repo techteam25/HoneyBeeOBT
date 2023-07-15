@@ -7,6 +7,7 @@ import PageNav from "@/components/menus/pageNav";
 import ScriptureCards from "@/components/cards/scriptureCards";
 import ImageCards from "@/components/cards/imageCards";
 import TitleCard from "@/components/cards/titleCard";
+import { useRouter } from "next/router";
 
 interface JSONData {
   name: string;
@@ -38,6 +39,7 @@ const Translate = () => {
   ]);
   const [data, setData] = React.useState(0);
   const [audioRecordings, setAudioRecordings] = React.useState<AudioData[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     setToggle(false);
@@ -67,7 +69,7 @@ const Translate = () => {
   };
 
   return (
-    <WorkflowLayout>
+    <WorkflowLayout route={router.pathname}>
       <TitleCard title="Translate" />
       <ImageCards
         image={arrayData[data].image}
