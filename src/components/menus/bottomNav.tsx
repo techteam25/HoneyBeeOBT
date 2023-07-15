@@ -29,7 +29,7 @@ const BottomNav = ({ route }: { route: string }) => {
     } else if (route == "/workflow/review") {
       setReview("#fff0e6");
     }
-  }, [toggle]);
+  }, [route, toggle]);
 
   return (
     <div className={styles.bottomNavContainer}>
