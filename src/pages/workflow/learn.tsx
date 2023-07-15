@@ -1,10 +1,11 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
-import React, { useEffect } from "react";;
-import WorkflowLayout from './layout';
+import React, { useEffect } from "react";
+import WorkflowLayout from "./layout";
 import axios from "axios";
 import ReactPlayer from "react-player";
 import DOMPurify from "dompurify";
 import TitleCard from "@/components/cards/titleCard";
+import { useRouter } from "next/router";
 
 interface JSONData {
   name: string;
@@ -15,6 +16,7 @@ interface JSONData {
 const Learn = () => {
   const [toggle, setToggle] = React.useState(true);
   const [arrayData, setArrayData] = React.useState<JSONData[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     setToggle(false);
@@ -32,7 +34,7 @@ const Learn = () => {
   }, [arrayData, toggle]);
 
   return (
-    <WorkflowLayout>
+    <WorkflowLayout route={router.pathname}>
       <TitleCard title="Learn" />
       <Box
         style={{

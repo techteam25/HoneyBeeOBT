@@ -6,6 +6,7 @@ import PageNav from "@/components/menus/pageNav";
 import ScriptureCards from "@/components/cards/scriptureCards";
 import ImageCards from "@/components/cards/imageCards";
 import TitleCard from "@/components/cards/titleCard";
+import { useRouter } from "next/router";
 
 interface JSONData {
   name: string;
@@ -30,6 +31,7 @@ const Naturalness = () => {
     },
   ]);
   const [data, setData] = React.useState(0);
+  const router = useRouter();
 
   useEffect(() => {
     setToggle(false);
@@ -48,7 +50,7 @@ const Naturalness = () => {
   }, [arrayData, toggle]);
 
   return (
-    <WorkflowLayout>
+    <WorkflowLayout route={router.pathname}>
       <TitleCard title="Naturalness Check" />
       <ImageCards
         image={arrayData[data].image}
