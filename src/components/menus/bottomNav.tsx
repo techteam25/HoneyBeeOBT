@@ -1,87 +1,107 @@
-import { Button } from "@mui/material";
-import Link from "next/link";
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
 import styles from "./BottomNav.module.css";
-import React, { useEffect } from "react";
 
-const BottomNav = ({ route }: { route: string }) => {
-  const [learn, setLearn] = React.useState("#00cc88");
-  const [translate, setTranslate] = React.useState("#ff0000");
-  const [naturalness, setNaturalness] = React.useState("#009900");
-  const [accuracy, setAccuracy] = React.useState("#008ae6");
-  const [voice, setVoice] = React.useState("#ff0066");
-  const [finalize, setFinalize] = React.useState("#aa80ff");
-  const [review, setReview] = React.useState("#ff6600");
-  const [toggle, setToggle] = React.useState(true);
-  useEffect(() => {
-    setToggle(false);
-    if (route == "/workflow/learn") {
-      setLearn("#e6fff7");
-    } else if (route == "/workflow/translate") {
-      setTranslate("#ffe6e6");
-    } else if (route == "/workflow/naturalness") {
-      setNaturalness("#e6ffe6");
-    } else if (route == "/workflow/accuracy") {
-      setAccuracy("#e6f5ff");
-    } else if (route == "/workflow/voice") {
-      setVoice("#ffe6f0");
-    } else if (route == "/workflow/finalize") {
-      setFinalize("#eee6ff");
-    } else if (route == "/workflow/review") {
-      setReview("#fff0e6");
-    }
-  }, [route, toggle]);
-
-  return (
-    <div className={styles.bottomNavContainer}>
-      <Link href="/workflow/learn">
-        <Button sx={{ backgroundColor: learn }} variant="contained">
-          Learn
-        </Button>
-      </Link>
-      <Link href="/workflow/translate">
-        <Button
-          sx={{ backgroundColor: translate, ml: "2vw" }}
-          variant="contained"
-        >
-          Translate
-        </Button>
-      </Link>
-      <Link href="/workflow/naturalness">
-        <Button
-          sx={{ backgroundColor: naturalness, ml: "2vw" }}
-          variant="contained"
-        >
-          Naturalness
-        </Button>
-      </Link>
-      <Link href="/workflow/accuracy">
-        <Button
-          sx={{ backgroundColor: accuracy, ml: "2vw" }}
-          variant="contained"
-        >
-          Accuracy
-        </Button>
-      </Link>
-      <Link href="/workflow/voice">
-        <Button sx={{ backgroundColor: voice, ml: "2vw" }} variant="contained">
-          Voice Studio
-        </Button>
-      </Link>
-      <Link href="/workflow/finalize">
-        <Button
-          sx={{ backgroundColor: finalize, ml: "2vw" }}
-          variant="contained"
-        >
-          Finalize
-        </Button>
-      </Link>
-      <Link href="/workflow/review">
-        <Button sx={{ backgroundColor: review, ml: "2vw" }} variant="contained">
-          Review
-        </Button>
-      </Link>
-    </div>
-  );
+type Routes = {
+  [key: string]: string;
 };
 
-export default BottomNav;
+const routes: Routes = {
+  Learn: '/workflow/learn',
+  Translate: '/workflow/translate',
+  Naturalness: '/workflow/naturalness',
+  Accuracy: '/workflow/accuracy',
+  'Voice Studio': '/workflow/voice',
+  Finalize: '/workflow/finalize',
+  Review: '/workflow/review',
+};
+
+const routeColor: any = {
+  '/workflow/learn': "#00cc88",
+  '/workflow/translate': "#ff0000",
+  '/workflow/naturalness': "#009900",
+  '/workflow/accuracy': "#008ae6",
+  '/workflow/voice': "#ff0066",
+  '/workflow/finalize': "#aa80ff",
+  '/workflow/review': "#ff6600",
+}
+
+export default function BottomNav({ router }: { router: string }) {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number>(-1);
+  const open = Boolean(anchorEl);
+
+  useEffect(() => {
+    const index = Object.values(routes).findIndex((route) => route === router);
+    setSelectedIndex(index);
+  }, [router]);
+
+  const handleClickListItem = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuItemClick = (
+    event: React.MouseEvent<HTMLElement>,
+    index: number,
+  ) => {
+    setSelectedIndex(index);
+    setAnchorEl(null);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  return (
+    <div className={styles.mainContainer} >
+
+      <List component="nav" aria-label="Workflow">
+        <ListItem
+          button
+          id="workflow-button"
+          aria-haspopup="true"
+          aria-controls="workflow-menu"
+          aria-label="workflow menu"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClickListItem}
+          style={{ backgroundColor: routeColor[router] }}
+          className={styles.listItem}
+        >
+          <ListItemText
+            primary="Workflow"
+            secondary={selectedIndex !== -1 ? Object.keys(routes)[selectedIndex] : ''}
+          />
+        </ListItem>
+      </List>
+      <Menu
+        id="workflow-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'workflow-button',
+          role: 'listbox',
+        }}
+      >
+        {Object.keys(routes).map((route, index) => (
+          <Link key={route} href={routes[route]}>
+            <MenuItem
+              selected={index === selectedIndex}
+              onClick={(event) => handleMenuItemClick(event, index)}
+              style={{ backgroundColor: routeColor[routes[route]] }}
+              className={styles.menuItem}
+
+            >
+              {route}
+            </MenuItem>
+          </Link>
+        ))}
+      </Menu>
+    </div>
+  );
+}

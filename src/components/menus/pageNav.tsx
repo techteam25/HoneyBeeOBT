@@ -1,4 +1,7 @@
 import { Box, Button } from "@mui/material";
+import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
+import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
+import styles from './pageNav.module.css';
 
 const PageNav = (props: {
   page: number;
@@ -14,21 +17,24 @@ const PageNav = (props: {
       }}
     >
       <Button
-        sx={{ mr: "5vw" }}
+      className={styles.backButton}
+      size="large"
         onClick={() => {
           if (props.page > 0) props.setPage(props.page - 1);
         }}
         variant="contained"
       >
-        Go back a Page
+        <ArrowBackOutlinedIcon />
       </Button>
       <Button
+      className={styles.nextButton}
+      size="large"
         onClick={() => {
           if (props.page < props.length - 1) props.setPage(props.page + 1);
         }}
         variant="contained"
       >
-        Go forward a Page
+        <ArrowForwardOutlinedIcon />
       </Button>
     </Box>
   );
