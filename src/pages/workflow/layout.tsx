@@ -11,7 +11,7 @@ export default function WorkflowLayout({
   return (
     <div className="main-contianer" style={{ paddingTop: "5vh" }}>
       {children}
-      <BottomNav route={route} />
+      <BottomNav router={route} />
     </div>
   );
 }
