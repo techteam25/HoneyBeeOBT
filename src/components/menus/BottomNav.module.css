@@ -1,6 +1,10 @@
 .mainContainer {
     display: flex;
     justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    translate: -50%;
 }
 
 .menuItem {
