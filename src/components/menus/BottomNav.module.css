@@ -4,9 +4,11 @@
     margin: 5vh 0;
     flex-wrap: wrap;
     gap: 1rem;
+    padding: 1rem 10rem;
 
     @media (max-width: 480px) {
         flex-direction: column;
         align-items: center;
+        padding: 0;
     }
 }
