@@ -1,0 +1,98 @@
+.full-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: radial-gradient(circle at -14.3% -17.5%, rgb(245, 168, 168) 4%, rgb(164, 168, 248) 100.2%);
+    /* optional: adjust the z-index as needed */
+}
+
+.translate_container {
+    width: 400px;
+    /* Set the width of the container */
+    height: 300px;
+    /* Set the height of the container */
+    margin: 0 auto;
+    /* Center the container horizontally */
+    margin-top: 100px;
+    /* Adjust the top margin as needed */
+}
+
+
+/* CSS */
+.button-56 {
+    align-items: center;
+    background-color: #fee6e3;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin: 5px;
+}
+
+.button-56:after {
+    background-color: #111;
+    border-radius: 8px;
+    content: "";
+    display: block;
+    height: 48px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px, 8px);
+    transition: transform .2s ease-out;
+    z-index: -1;
+}
+
+.button-56:hover:after {
+    transform: translate(0, 0);
+}
+
+.button-56:active {
+    background-color: #ffdeda;
+    outline: 0;
+}
+
+.button-56:hover {
+    outline: 0;
+}
+
+@media (min-width: 768px) {
+    .button-56 {
+        padding: 0 40px;
+    }
+}
+
+
+.inputform {
+    padding: 8px 12px;
+    /* Add padding inside the input */
+    border: 1px solid #ccc;
+    /* Add a border */
+    border-radius: 4px;
+    /* Round the corners */
+    font-size: 16px;
+    /* Set the font size */
+    outline: none;
+    /* Remove the default outline */
+    box-shadow: none;
+    /* Remove any box shadow */
+}

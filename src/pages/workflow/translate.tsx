@@ -30,6 +30,8 @@ interface AudioData {
 
 const Translate = () => {
   const [toggle, setToggle] = React.useState(true);
+
+
   const [arrayData, setArrayData] = React.useState<JSONData[]>([
     {
       name: "Loading",
@@ -71,6 +73,8 @@ const Translate = () => {
     };
     setAudioRecordings((audioRecordings) => [...audioRecordings, packer]);
   };
+
+
 
   return (
     <div className="main-contianer" style={{ paddingTop: "5vh" }}>
@@ -159,6 +163,14 @@ const Translate = () => {
           Go forward a Section
         </Button>
       </Box>
+    
+
+
+
+
+
+
+
       <Box
         style={{
           display: "flex",
@@ -176,9 +188,20 @@ const Translate = () => {
           downloadFileExtension="mp3"
         />
       </Box>
+
+      <Box style={{display: "flex",
+          justifyContent: "center",
+          marginTop: "5vh"}}>
+        <form>
+          <input type="text" placeholder="What is the file name "/>
+        </form>
+      </Box>
       <BottomNav />
     </div>
   );
 };
 
-export default Translate;
+export default Translate
+
+
+
