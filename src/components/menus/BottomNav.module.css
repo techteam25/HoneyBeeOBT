@@ -1,12 +1,19 @@
-.bottomNavContainer {
+.mainContainer {
     display: flex;
     justify-content: center;
-    margin: 5vh 0;
-    flex-wrap: wrap;
-    gap: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    translate: -50%;
+}
 
-    @media (max-width: 480px) {
-        flex-direction: column;
-        align-items: center;
-    }
+.menuItem {
+    height: 3rem;
+    margin-top: 1rem;
+}
+
+.listItem{
+    margin: 1rem 0;
+    border-radius: 10px;
+    text-align: center;
 }

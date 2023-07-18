@@ -9,9 +9,9 @@ export default function WorkflowLayout({
   route: string;
 }) {
   return (
-    <div className="main-contianer" style={{ paddingTop: "5vh" }}>
+    <div className="main-contianer" style={{ paddingTop: "5vh", paddingBottom: "20vh" }}>
       {children}
-      <BottomNav route={route} />
+      <BottomNav router={route} />
     </div>
   );
 }
