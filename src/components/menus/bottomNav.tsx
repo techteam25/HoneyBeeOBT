@@ -69,8 +69,12 @@ export default function BottomNav({ router }: { router: string }) {
           aria-label="workflow menu"
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClickListItem}
-          style={{ backgroundColor: routeColor[router] }}
-          className={styles.listItem}
+          style={{
+            backgroundColor: routeColor[router],
+            margin: '1rem 0',
+            borderRadius: '10px',
+            textAlign: 'center'
+          }}
         >
           <ListItemText
             primary="Workflow"
@@ -93,8 +97,11 @@ export default function BottomNav({ router }: { router: string }) {
             <MenuItem
               selected={index === selectedIndex}
               onClick={(event) => handleMenuItemClick(event, index)}
-              style={{ backgroundColor: routeColor[routes[route]] }}
-              className={styles.menuItem}
+              style={{
+                backgroundColor: routeColor[routes[route]],
+                height: '3rem',
+                marginTop: '1rem'
+              }}
 
             >
               {route}
