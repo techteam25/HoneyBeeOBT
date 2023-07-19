@@ -9,34 +9,30 @@ const PageNav = (props: {
   length: number;
 }) => {
   return (
-    <Box
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        marginTop: "5vh",
-      }}
-    >
-      <Button
-      className={styles.backButton}
-      size="large"
-        onClick={() => {
-          if (props.page > 0) props.setPage(props.page - 1);
-        }}
-        variant="contained"
-      >
-        <ArrowBackOutlinedIcon />
-      </Button>
-      <Button
-      className={styles.nextButton}
-      size="large"
-        onClick={() => {
-          if (props.page < props.length - 1) props.setPage(props.page + 1);
-        }}
-        variant="contained"
-      >
-        <ArrowForwardOutlinedIcon />
-      </Button>
-    </Box>
+    <div className={styles.navContainer}>
+      <div className={styles.backButton} >
+        <Button
+          size="large"
+          onClick={() => {
+            if (props.page > 0) props.setPage(props.page - 1);
+          }}
+          variant="contained"
+        >
+          <ArrowBackOutlinedIcon />
+        </Button>
+      </div>
+      <div className={styles.nextButton}>
+        <Button
+          size="large"
+          onClick={() => {
+            if (props.page < props.length - 1) props.setPage(props.page + 1);
+          }}
+          variant="contained"
+        >
+          <ArrowForwardOutlinedIcon />
+        </Button>
+      </div>
+    </div>
   );
 };
 
