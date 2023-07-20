@@ -6,14 +6,3 @@
     left: 50%;
     translate: -50%;
 }
-
-.menuItem {
-    height: 3rem;
-    margin-top: 1rem;
-}
-
-.listItem{
-    margin: 1rem 0;
-    border-radius: 10px;
-    text-align: center;
-}
