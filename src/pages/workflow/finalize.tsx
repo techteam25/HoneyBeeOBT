@@ -13,10 +13,10 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect } from "react";
+import WorkflowLayout from "./layout";
 import axios from "axios";
-import Link from "next/link";
-import DOMPurify from "dompurify";
-import BottomNav from "@/components/menus/bottomNav";
+import TitleCard from "@/components/cards/titleCard";
+import { useRouter } from "next/router";
 
 interface JSONData {
   name: string;
@@ -28,6 +28,7 @@ interface JSONData {
 const Finalize = () => {
   const [toggle, setToggle] = React.useState(true);
   const [arrayData, setArrayData] = React.useState<JSONData[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     setToggle(false);
@@ -45,14 +46,8 @@ const Finalize = () => {
   }, [arrayData, toggle]);
 
   return (
-    <div className="main-contianer" style={{ paddingTop: "5vh" }}>
-      <Card sx={{ ml: "15vw", mr: "15vw" }}>
-        <CardContent>
-          <Typography variant="h3" style={{ textAlign: "center" }}>
-            Finalize
-          </Typography>
-        </CardContent>
-      </Card>
+    <WorkflowLayout route={router.pathname}>
+      <TitleCard title="Finalize" />
       <Box
         style={{
           display: "flex",
@@ -117,8 +112,7 @@ const Finalize = () => {
           </RadioGroup>
         </FormControl>
       </Box>
-      <BottomNav />
-    </div>
+    </WorkflowLayout>
   );
 };
 

@@ -3,6 +3,7 @@ import "../styles/burger.css";
 import "../styles/globals.css";
 import { ThemeProvider, createTheme } from "@mui/material";
 import HamburgerMenu from "@/components/menus/hamburger";
+import "./globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   const darkTheme = createTheme({

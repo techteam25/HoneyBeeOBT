@@ -1,0 +1,27 @@
+.h1 {
+    font-size: clamp(2.488rem, 0.3578rem + 2.9358vw, 4.209rem);
+}
+
+.h2 {
+    font-size: clamp(2.074rem, 0.3578rem + 2.9358vw, 3.157rem);
+}
+
+.h3 {
+    font-size: clamp(1.728rem, 0.3578rem + 2.9358vw, 2.369rem);
+}
+
+.h4 {
+    font-size: clamp(1.44rem, 0.3578rem + 2.9358vw, 1.777rem);
+}
+
+.h5 {
+    font-size: clamp(1.2rem, 0.3578rem + 2.9358vw, 1.333rem);
+}
+
+.p {
+    font-size: clamp(1rem, 0.3578rem + 2.9358vw, 1.333rem);
+}
+
+.span {
+    font-size: 1rem;
+}

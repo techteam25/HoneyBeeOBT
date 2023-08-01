@@ -1,10 +1,11 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import React, { useEffect } from "react";
+import WorkflowLayout from "./layout";
 import axios from "axios";
-import Link from "next/link";
 import ReactPlayer from "react-player";
 import DOMPurify from "dompurify";
-import BottomNav from "@/components/menus/bottomNav";
+import TitleCard from "@/components/cards/titleCard";
+import { useRouter } from "next/router";
 
 interface JSONData {
   name: string;
@@ -15,6 +16,7 @@ interface JSONData {
 const Learn = () => {
   const [toggle, setToggle] = React.useState(true);
   const [arrayData, setArrayData] = React.useState<JSONData[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     setToggle(false);
@@ -32,14 +34,8 @@ const Learn = () => {
   }, [arrayData, toggle]);
 
   return (
-    <div className="main-contianer" style={{ paddingTop: "5vh" }}>
-      <Card sx={{ ml: "15vw", mr: "15vw" }}>
-        <CardContent>
-          <Typography variant="h3" style={{ textAlign: "center" }}>
-            Learn
-          </Typography>
-        </CardContent>
-      </Card>
+    <WorkflowLayout route={router.pathname}>
+      <TitleCard title="Learn" />
       <Box
         style={{
           display: "flex",
@@ -52,15 +48,18 @@ const Learn = () => {
           marginBottom: "5vh",
         }}
       >
-        {arrayData.map((element) => (
-          <ReactPlayer
-            url={`${DOMPurify.sanitize(element.video)}`}
-            key={element.key}
-          />
-        ))}
+        {arrayData.map((element) => {
+          const address: string = DOMPurify.sanitize(element.video);
+          const address2 = address.split("https://youtube.com/");
+          return (
+            <ReactPlayer
+              url={`https://youtube.com/ + ${address2}`}
+              key={element.key}
+            />
+          );
+        })}
       </Box>
-      <BottomNav />
-    </div>
+    </WorkflowLayout>
   );
 };
 

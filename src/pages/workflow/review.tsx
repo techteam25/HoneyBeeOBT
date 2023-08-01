@@ -1,9 +1,12 @@
 import { Card, CardContent, Typography } from "@mui/material";
 import React, { useEffect } from "react";
+import WorkflowLayout from "./layout";
 import axios from "axios";
 import Link from "next/link";
 import DOMPurify from "dompurify";
 import BottomNav from "@/components/menus/bottomNav";
+import TitleCard from "@/components/cards/titleCard";
+import { useRouter } from "next/router";
 
 interface JSONData {
   name: string;
@@ -15,6 +18,7 @@ interface JSONData {
 const Review = () => {
   const [toggle, setToggle] = React.useState(true);
   const [arrayData, setArrayData] = React.useState<JSONData[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     setToggle(false);
@@ -32,14 +36,8 @@ const Review = () => {
   }, [arrayData, toggle]);
 
   return (
-    <div className="main-contianer" style={{ paddingTop: "5vh" }}>
-      <Card sx={{ ml: "15vw", mr: "15vw" }}>
-        <CardContent>
-          <Typography variant="h3" style={{ textAlign: "center" }}>
-            Review
-          </Typography>
-        </CardContent>
-      </Card>
+    <WorkflowLayout route={router.pathname}>
+      <TitleCard title="Review" />
 
       {arrayData.map((element) => (
         <Card variant="outlined" sx={{ m: "5vw" }} key={element.key}>
@@ -52,8 +50,7 @@ const Review = () => {
           </Link>
         </Card>
       ))}
-      <BottomNav />
-    </div>
+    </WorkflowLayout>
   );
 };
 
