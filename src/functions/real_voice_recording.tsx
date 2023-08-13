@@ -2,7 +2,7 @@ import React, {useState, useRef, useCallback, useMemo} from 'react';
 import './translate_voice.css' 
 
 
-export default function translate (){
+export default function Translate (){
   
   // The RecorderdAudio is to store Audio after started and stoped 
   const [recordedAudio, setRecordedAudio] = useState<Blob[]>([]);

@@ -15,6 +15,7 @@ const config = {
     'src/**/*.{ts,tsx}',
     '!src/pages/_app.tsx',
     '!src/pages/_document.tsx',
+    '!src/pages/workflow/test.tsx',
 ],
   //to enable test console warns remove the --silent flag in the package.json
 };
