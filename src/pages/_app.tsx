@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import { ThemeProvider, createTheme } from "@mui/material";
 import HamburgerMenu from "@/components/menus/hamburger";
 import "./globals.css";
+import Help from "@/components/menus/help";
 
 export default function App({ Component, pageProps }: AppProps) {
   const darkTheme = createTheme({
@@ -15,6 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={darkTheme}>
       <title>HoneyBee OBT</title>
       <HamburgerMenu />
+      <Help />
       <Component {...pageProps} />
     </ThemeProvider>
   );
