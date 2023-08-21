@@ -7,8 +7,10 @@ const ImageCards = (props: { image: string; description: string }) => {
       <Image
         src={props.image || "/tomb2.jpg"}
         alt={props.description || "example description"}
-        width={200}
-        height={200}
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: '100%', height: 'auto' }}
       />
 
     </div>
