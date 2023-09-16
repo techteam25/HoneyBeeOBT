@@ -1,13 +1,9 @@
 .titleCard {
-    padding: 1rem;
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .cards {
-    margin: 0 15vw;
-    text-align: center;
     padding: 1rem 2rem;
     background-color: var(--card-bgc);
 }
@@ -17,8 +13,11 @@
     flex: 1;
     justify-content: center;
     align-items: center;
-    margin-left: 15vw;
-    margin-right: 15vw;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    width: 100%;
+    background-color: var(--card-secondary);
+}
+
+.imageCards img {
+    width: 100%;
+    max-width: 540px;
 }
