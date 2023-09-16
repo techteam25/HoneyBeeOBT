@@ -1,0 +1,6 @@
+.workflowContainer {
+    padding-bottom: 20vh;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}

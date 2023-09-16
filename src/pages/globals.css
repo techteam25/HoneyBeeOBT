@@ -40,6 +40,7 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-bgc: #1e1e1e;
+  --card-secondary: hsl(0, 0%,15%);
   --card-border-rgb: 131, 134, 135;
 }
 

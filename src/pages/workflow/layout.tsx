@@ -1,5 +1,6 @@
 import React from "react";
 import BottomNav from "../../components/menus/bottomNav";
+import styles from "./layout.module.css";
 
 export default function WorkflowLayout({
   children,
@@ -9,7 +10,7 @@ export default function WorkflowLayout({
   route: string;
 }) {
   return (
-    <div className="main-contianer" style={{ paddingTop: "5vh", paddingBottom: "20vh" }}>
+    <div className={styles.workflowContainer} style={{ paddingBottom: "20vh" }}>
       {children}
       <BottomNav router={route} />
     </div>

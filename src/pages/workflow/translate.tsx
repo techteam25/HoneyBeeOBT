@@ -79,7 +79,7 @@ const Translate = () => {
         name={arrayData[data].name}
         passage={arrayData[data].passage}
       />
-      <Card
+      {!!audioRecordings.length && <Card
         style={{
           display: "flex",
           flex: 1,
@@ -99,7 +99,7 @@ const Translate = () => {
             }
           })}
         </CardContent>
-      </Card>
+      </Card>}
       <PageNav page={data} setPage={setData} length={arrayData.length} />
       <Box
         style={{

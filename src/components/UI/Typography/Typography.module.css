@@ -19,7 +19,7 @@
 }
 
 .p {
-    font-size: clamp(1rem, 0.3578rem + 2.9358vw, 1.333rem);
+    font-size: clamp(1rem, 0.3rem + 2.2vw, 1.1rem);
 }
 
 .span {
