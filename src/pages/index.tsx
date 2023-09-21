@@ -129,7 +129,9 @@ const Home = () => {
                   }}
                 >
                   <Image
-                    src={element.image || "http://localhost:3000/logo192.png"}
+                    src={
+                      element.image || "http://localhost:3000/honeybee_logo.png"
+                    }
                     alt={element.description || "image for description"}
                     width={100}
                     height={100}
