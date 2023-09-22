@@ -3,6 +3,27 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Typography } from "@mui/material";
 import { slide as Menu } from "react-burger-menu";
+import Person from "@mui/icons-material/Person";
+import {
+  Download,
+  Folder,
+  Home,
+  Language,
+  Search,
+  InsertLink,
+  Add,
+  Sync,
+  Info,
+  Book,
+  Assignment,
+  Lightbulb,
+  Translate,
+  CheckCircleOutline,
+  KeyboardVoice,
+  Share,
+  Checklist,
+  Park,
+} from "@mui/icons-material";
 
 const HamburgerMenu = () => {
   const { route } = useRouter();
@@ -24,8 +45,13 @@ const HamburgerMenu = () => {
         onClose={toggleMenu}
       >
         <Link id="user" className="menu-item" href="/user">
-          <Typography variant="h3">User</Typography>
+          <div style={{ flex: 1, flexDirection: "row" }}>
+            <Typography variant="h5">
+              <Person /> User Account
+            </Typography>
+          </div>
         </Link>
+
         <Link
           id="home-navigation"
           className="menu-item"
@@ -40,37 +66,64 @@ const HamburgerMenu = () => {
           data-testid="burger-home"
           href="/"
         >
-          Home
+          {" "}
+          <Typography>
+            {" "}
+            <Home /> Home
+          </Typography>
         </Link>
         <Link id="scripture" className="menu-item" href="/scripture">
-          Scripture Passages
+          <Typography>
+            <Book /> Scripture Passages
+          </Typography>
         </Link>
         <Link id="download" className="menu-item" href="/download">
-          Download Templates
+          <Typography>
+            {" "}
+            <Download /> Download Templates
+          </Typography>
         </Link>
         <Link id="update" className="menu-item" href="/registration">
-          Project Registration
+          <Typography>
+            <Assignment /> Project Registration
+          </Typography>
         </Link>
         <Link id="search" className="menu-item" href="/search">
-          Search
+          <Typography>
+            {" "}
+            <Search /> Search
+          </Typography>
         </Link>
         <Link id="folder" className="menu-item" href="/folder">
-          Folder
+          <Typography>
+            {" "}
+            <Folder /> Folder
+          </Typography>
         </Link>
         <Link id="language" className="menu-item" href="/language">
-          Select Language
+          <Typography>
+            <Language /> Select Language
+          </Typography>
         </Link>
         <Link id="words" className="menu-item" href="/words">
-          Word Links List
+          <Typography>
+            <InsertLink /> Word Links List
+          </Typography>
         </Link>
         <Link id="demo" className="menu-item" href="/demo">
-          Add Demo
+          <Typography>
+            <Add /> Add Demo
+          </Typography>
         </Link>
         <Link id="sync" className="menu-item" href="/sync">
-          Sync
+          <Typography>
+            <Sync /> Sync
+          </Typography>
         </Link>
         <Link id="about" className="menu-item" href="/about">
-          About
+          <Typography>
+            <Info /> About
+          </Typography>
         </Link>
         <Link
           id="home-workflow"
@@ -81,48 +134,59 @@ const HamburgerMenu = () => {
           <Typography variant="h3">Workflow</Typography>
         </Link>
         <Link id="workflow-learn" className="menu-item" href="/workflow/learn">
-          Learn
+          <Typography>
+            <Lightbulb /> Learn
+          </Typography>
         </Link>
         <Link
           id="workflow-translate"
           className="menu-item"
           href="/workflow/translate"
         >
-          Translate and Revise
+          <Typography>
+            <Translate /> Translate and Revise
+          </Typography>
         </Link>
         <Link
           id="workflow-naturalness"
           className="menu-item"
           href="/workflow/naturalness"
         >
-          Naturanlness Checks
+          <Typography>
+            <Park /> Naturalness Checks
+          </Typography>
         </Link>
         <Link
           id="workflow-accuracy"
           className="menu-item"
           href="/workflow/accuracy"
         >
-          Accuracy Check
+          <Typography>
+            <CheckCircleOutline /> Accuracy Check
+          </Typography>
         </Link>
         <Link id="workflow-voice" className="menu-item" href="/workflow/voice">
-          Voice Studio
+          <Typography>
+            <KeyboardVoice /> Voice Studio
+          </Typography>
         </Link>
         <Link
           id="workflow-finalize"
           className="menu-item"
           href="/workflow/finalize"
         >
-          Finalize
+          <Typography>
+            <Checklist /> Finalize
+          </Typography>
         </Link>
         <Link
           id="workflow-review"
           className="menu-item"
           href="/workflow/review"
         >
-          Review + Share
-        </Link>
-        <Link id="login" className="menu-item" href="/api/auth/login">
-          <Typography variant="h3">Logout</Typography>
+          <Typography>
+            <Share /> Review + Share
+          </Typography>
         </Link>
       </Menu>
     </div>

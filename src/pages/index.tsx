@@ -24,7 +24,12 @@ const Home = () => {
   const router = useRouter();
   const { user, error, isLoading } = useUser();
   //Loading State
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading)
+    return (
+      <div>
+        <Typography>Loading...</Typography>
+      </div>
+    );
   //Error State
   if (error) return <div>{error.message}</div>;
   //User State
