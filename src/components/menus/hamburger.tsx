@@ -58,7 +58,7 @@ const HamburgerMenu = () => {
           data-testid="burger-home-nav"
           href="/"
         >
-          <Typography variant="h3">Navigation</Typography>
+          <Typography variant="h4">Navigation</Typography>
         </Link>
         <Link
           id="home"
@@ -131,7 +131,7 @@ const HamburgerMenu = () => {
           data-testid="burger-home-workflow"
           href="/workflow"
         >
-          <Typography variant="h3">Workflow</Typography>
+          <Typography variant="h4">Workflow</Typography>
         </Link>
         <Link id="workflow-learn" className="menu-item" href="/workflow/learn">
           <Typography>
