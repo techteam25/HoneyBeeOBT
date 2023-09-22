@@ -33,7 +33,7 @@ const User = () => {
       <Card sx={{ ml: "15vw", mr: "15vw" }}>
         <CardContent>
           <Typography variant="h3" style={{ textAlign: "center" }}>
-            Welcome: {user?.nickname ?? "Guest"}
+            Welcome: {user?.nickname ?? "Guest"} !
           </Typography>
         </CardContent>
       </Card>
