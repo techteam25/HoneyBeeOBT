@@ -5,6 +5,7 @@ import { ThemeProvider, createTheme } from "@mui/material";
 import HamburgerMenu from "@/components/menus/hamburger";
 import "./globals.css";
 import Help from "@/components/menus/help";
+import { UserProvider } from "@auth0/nextjs-auth0/client";
 
 export default function App({ Component, pageProps }: AppProps) {
   const darkTheme = createTheme({
@@ -13,11 +14,13 @@ export default function App({ Component, pageProps }: AppProps) {
     },
   });
   return (
-    <ThemeProvider theme={darkTheme}>
-      <title>HoneyBee OBT</title>
-      <HamburgerMenu />
-      <Help />
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <UserProvider>
+      <ThemeProvider theme={darkTheme}>
+        <title>HoneyBee OBT</title>
+        <HamburgerMenu />
+        <Help />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </UserProvider>
   );
 }

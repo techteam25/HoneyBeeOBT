@@ -5,12 +5,12 @@ import { Typography } from "@mui/material";
 import { slide as Menu } from "react-burger-menu";
 
 const HamburgerMenu = () => {
-  const { route } = useRouter()
+  const { route } = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    setIsOpen(false)
-  }, [route])
+    setIsOpen(false);
+  }, [route]);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   return (
@@ -23,6 +23,9 @@ const HamburgerMenu = () => {
         onOpen={toggleMenu}
         onClose={toggleMenu}
       >
+        <Link id="user" className="menu-item" href="/user">
+          <Typography variant="h3">User</Typography>
+        </Link>
         <Link
           id="home-navigation"
           className="menu-item"
@@ -31,7 +34,12 @@ const HamburgerMenu = () => {
         >
           <Typography variant="h3">Navigation</Typography>
         </Link>
-        <Link id="home" className="menu-item" data-testid="burger-home" href="/">
+        <Link
+          id="home"
+          className="menu-item"
+          data-testid="burger-home"
+          href="/"
+        >
           Home
         </Link>
         <Link id="scripture" className="menu-item" href="/scripture">
@@ -106,12 +114,19 @@ const HamburgerMenu = () => {
         >
           Finalize
         </Link>
-        <Link id="workflow-review" className="menu-item" href="/workflow/review">
+        <Link
+          id="workflow-review"
+          className="menu-item"
+          href="/workflow/review"
+        >
           Review + Share
+        </Link>
+        <Link id="login" className="menu-item" href="/api/auth/login">
+          <Typography variant="h3">Logout</Typography>
         </Link>
       </Menu>
     </div>
-  )
+  );
 };
 
 const HamburgerIcon = () => (

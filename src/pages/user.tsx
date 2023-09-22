@@ -20,22 +20,20 @@ function a11yProps(index: number) {
   };
 }
 
-const Home = () => {
+const User = () => {
   const router = useRouter();
   const { user, error, isLoading } = useUser();
   //Loading State
   if (isLoading) return <div>Loading...</div>;
   //Error State
   if (error) return <div>{error.message}</div>;
-  //User State
-  if (user) router.push("/home");
 
   return (
     <div className="main-contianer" style={{ paddingTop: "5vh" }}>
       <Card sx={{ ml: "15vw", mr: "15vw" }}>
         <CardContent>
           <Typography variant="h3" style={{ textAlign: "center" }}>
-            Login to HoneyBee
+            Welcome: {user?.nickname ?? "Guest"} !
           </Typography>
         </CardContent>
       </Card>
@@ -54,9 +52,17 @@ const Home = () => {
         >
           <Typography>Login</Typography>
         </Button>
+        <Button
+          variant="outlined"
+          onClick={() => {
+            router.push("api/auth/logout");
+          }}
+        >
+          <Typography>Logout</Typography>
+        </Button>
       </Box>
     </div>
   );
 };
 
-export default Home;
+export default User;
