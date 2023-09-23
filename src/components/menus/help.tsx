@@ -10,6 +10,7 @@ import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 import { Typography } from "../UI/Typography";
 import React from "react";
 import axios from "axios";
+import HelpPrompts from "../futureFeatures/helpPrompts";
 
 const Help = () => {
   const [open, setOpen] = React.useState(false);
@@ -42,7 +43,9 @@ const Help = () => {
       >
         <DialogTitle id="responsive-dialog-title">{"Need Help?"}</DialogTitle>
         <DialogContent>
-          <DialogContentText>{data.help}</DialogContentText>
+          <DialogContentText>
+            <HelpPrompts />
+          </DialogContentText>
         </DialogContent>
       </Dialog>
     </div>
