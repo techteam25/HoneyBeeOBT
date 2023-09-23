@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
     },
   });
   return (
-    <UserProvider>
+    <UserProvider loginUrl="/api/auth/login" profileUrl="/api/auth/me">
       <ThemeProvider theme={darkTheme}>
         <title>HoneyBee OBT</title>
         <HamburgerMenu />
