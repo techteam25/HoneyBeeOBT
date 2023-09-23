@@ -22,7 +22,7 @@ const Help = () => {
         aria-label="delete"
         onClick={() => {
           setOpen(true);
-          /*axios
+          axios
             .post("/api/help", { page: window.location.pathname })
             .then((res) => {
               setData({ help: res.data.help });
@@ -30,7 +30,7 @@ const Help = () => {
             })
             .catch((err) => {
               console.log(err);
-            });*/
+            });
         }}
       >
         <QuestionMarkIcon />
