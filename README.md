@@ -75,7 +75,8 @@ In order to get Authzero to work locally create a .env.local files and populate 
   AUTH0_BASE_URL='http://localhost:3000'
   AUTH0_ISSUER_BASE_URL='url_val'
   AUTH0_CLIENT_ID='client_id'
-  AUTH0_CLIENT_SECRET='auth-secret'```
+  AUTH0_CLIENT_SECRET='auth-secret'
+```
 
 ## Learn More
 
