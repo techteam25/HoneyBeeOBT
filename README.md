@@ -78,6 +78,8 @@ In order to get Authzero to work locally create a .env.local files and populate 
   AUTH0_CLIENT_SECRET='auth-secret'
 ```
 
+Reach out to OOCAZ to get these values and to populate the environment, ***IMPORTANT NOTE*** Things will not work without these values!
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
