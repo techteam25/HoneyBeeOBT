@@ -23,10 +23,9 @@ const Help = () => {
         onClick={() => {
           setOpen(true);
           axios
-            .post("/api/help", { path: window.location.pathname })
+            .post("/api/help", { page: window.location.pathname })
             .then((res) => {
               setData({ help: res.data.help });
-              console.log(res.data.help);
             })
             .catch((err) => {
               console.log(err);
