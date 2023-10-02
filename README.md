@@ -68,6 +68,18 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## AuthZero and Setup
+
+In order to get Authzero to work locally create a .env.local files and populate these values:
+```AUTH0_SECRET='secret_val'
+  AUTH0_BASE_URL='http://localhost:3000'
+  AUTH0_ISSUER_BASE_URL='url_val'
+  AUTH0_CLIENT_ID='client_id'
+  AUTH0_CLIENT_SECRET='auth-secret'
+```
+
+Reach out to OOCAZ to get these values and to populate the environment, ***IMPORTANT NOTE*** Things will not work without these values!
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
