@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { slide as Menu } from "react-burger-menu";
 import Person from "@mui/icons-material/Person";
 import {
@@ -44,11 +44,10 @@ const HamburgerMenu = () => {
         onOpen={toggleMenu}
         onClose={toggleMenu}
       >
-        <Link id="user" className="menu-item" href="/user">
-          <div style={{ flex: 1, flexDirection: "row" }}>
-            <Typography variant="h5">
-              <Person /> User Account
-            </Typography>
+        <Link id="user" href="/user">
+          <div className="menu-item user-button">
+            <Person className="user-title" />
+            <Typography variant="h5">User Account</Typography>
           </div>
         </Link>
 
@@ -58,136 +57,147 @@ const HamburgerMenu = () => {
           data-testid="burger-home-nav"
           href="/"
         >
-          <Typography variant="h4">Navigation</Typography>
-        </Link>
-        <Link
-          id="home"
-          className="menu-item"
-          data-testid="burger-home"
-          href="/"
-        >
-          {" "}
-          <Typography>
-            {" "}
-            <Home /> Home
+          <Typography variant="h4" className="nav-title">
+            Navigation
           </Typography>
         </Link>
-        <Link id="scripture" className="menu-item" href="/scripture">
-          <Typography>
-            <Book /> Scripture Passages
-          </Typography>
+
+        <Link id="home" data-testid="burger-home" href="/">
+          <div className="menu-item">
+            <Home />
+            <Typography className="menu-item-text">Home</Typography>
+          </div>
         </Link>
-        <Link id="download" className="menu-item" href="/download">
-          <Typography>
-            {" "}
-            <Download /> Download Templates
-          </Typography>
+
+        <Link id="scripture" href="/scripture">
+          <div className="menu-item">
+            <Book />
+            <Typography className="menu-item-text">Scripture Passages</Typography>
+          </div>
         </Link>
-        <Link id="update" className="menu-item" href="/registration">
-          <Typography>
-            <Assignment /> Project Registration
-          </Typography>
+
+        <Link id="download" href="/download">
+          <div className="menu-item" >
+            <Download />
+            <Typography className="menu-item-text">Download Templates</Typography>
+          </div>
         </Link>
-        <Link id="search" className="menu-item" href="/search">
-          <Typography>
-            {" "}
-            <Search /> Search
-          </Typography>
+
+        <Link id="update" href="/registration">
+          <div className="menu-item">
+            <Assignment />
+            <Typography className="menu-item-text">Project Registration</Typography>
+          </div>
         </Link>
-        <Link id="folder" className="menu-item" href="/folder">
-          <Typography>
-            {" "}
-            <Folder /> Folder
-          </Typography>
+
+        <Link id="search" href="/search">
+          <div className="menu-item">
+            <Search />
+            <Typography className="menu-item-text">Search</Typography>
+          </div>
         </Link>
-        <Link id="language" className="menu-item" href="/language">
-          <Typography>
-            <Language /> Select Language
-          </Typography>
+
+        <Link id="folder" href="/folder">
+          <div className="menu-item">
+            <Folder />
+            <Typography className="menu-item-text">Folder</Typography>
+          </div>
         </Link>
-        <Link id="words" className="menu-item" href="/words">
-          <Typography>
-            <InsertLink /> Word Links List
-          </Typography>
+
+        <Link id="language" href="/language">
+          <div className="menu-item">
+            <Language />
+            <Typography className="menu-item-text">Select Language</Typography>
+          </div>
         </Link>
-        <Link id="demo" className="menu-item" href="/demo">
-          <Typography>
-            <Add /> Add Demo
-          </Typography>
+
+        <Link id="words" href="/words">
+          <div className="menu-item">
+            <InsertLink />
+            <Typography className="menu-item-text">Word Links List</Typography>
+          </div>
         </Link>
-        <Link id="sync" className="menu-item" href="/sync">
-          <Typography>
-            <Sync /> Sync
-          </Typography>
+
+        <Link id="demo" href="/demo">
+          <div className="menu-item">
+            <Add />
+            <Typography className="menu-item-text">Add Demo</Typography>
+          </div>
         </Link>
-        <Link id="about" className="menu-item" href="/about">
-          <Typography>
-            <Info /> About
-          </Typography>
+
+        <Link id="sync" href="/sync">
+          <div className="menu-item">
+            <Sync />
+            <Typography className="menu-item-text">Sync</Typography>
+          </div>
         </Link>
-        <Link
-          id="home-workflow"
-          className="menu-item"
-          data-testid="burger-home-workflow"
-          href="/workflow"
-        >
-          <Typography variant="h4">Workflow</Typography>
+
+        <Link id="about" href="/about">
+          <div className="menu-item">
+            <Info />
+            <Typography className="menu-item-text">About</Typography>
+          </div>
         </Link>
-        <Link id="workflow-learn" className="menu-item" href="/workflow/learn">
-          <Typography>
-            <Lightbulb /> Learn
-          </Typography>
-        </Link>
-        <Link
-          id="workflow-translate"
-          className="menu-item"
-          href="/workflow/translate"
-        >
-          <Typography>
-            <Translate /> Translate and Revise
-          </Typography>
-        </Link>
-        <Link
-          id="workflow-naturalness"
-          className="menu-item"
-          href="/workflow/naturalness"
-        >
-          <Typography>
-            <Park /> Naturalness Checks
-          </Typography>
-        </Link>
-        <Link
-          id="workflow-accuracy"
-          className="menu-item"
-          href="/workflow/accuracy"
-        >
-          <Typography>
-            <CheckCircleOutline /> Accuracy Check
-          </Typography>
-        </Link>
-        <Link id="workflow-voice" className="menu-item" href="/workflow/voice">
-          <Typography>
-            <KeyboardVoice /> Voice Studio
-          </Typography>
-        </Link>
-        <Link
-          id="workflow-finalize"
-          className="menu-item"
-          href="/workflow/finalize"
-        >
-          <Typography>
-            <Checklist /> Finalize
-          </Typography>
-        </Link>
-        <Link
-          id="workflow-review"
-          className="menu-item"
-          href="/workflow/review"
-        >
-          <Typography>
-            <Share /> Review + Share
-          </Typography>
-        </Link>
+
+        <div className="workflow-menu">
+          <Link
+            id="home-workflow"
+            data-testid="burger-home-workflow"
+            href="/workflow"
+          >
+            <Typography variant="h4" className="workflow-title">Workflow</Typography>
+          </Link>
+
+          <Link id="workflow-learn" href="/workflow/learn">
+            <div className="menu-item">
+              <Lightbulb />
+              <Typography className="menu-item-text">Learn</Typography>
+            </div>
+          </Link>
+
+          <Link id="workflow-translate" href="/workflow/translate">
+            <div className="menu-item">
+              <Translate />
+              <Typography className="menu-item-text">Translate and Revise</Typography>
+            </div>
+          </Link>
+
+          <Link id="workflow-naturalness" href="/workflow/naturalness">
+            <div className="menu-item">
+              <Park />
+              <Typography className="menu-item-text">Naturalness Checks</Typography>
+            </div>
+          </Link>
+
+          <Link id="workflow-accuracy" href="/workflow/accuracy">
+            <div className="menu-item">
+              <CheckCircleOutline />
+              <Typography className="menu-item-text">Accuracy Check</Typography>
+            </div>
+          </Link>
+
+          <Link id="workflow-voice" href="/workflow/voice">
+            <div className="menu-item">
+              <KeyboardVoice />
+              <Typography className="menu-item-text">Voice Studio</Typography>
+            </div>
+          </Link>
+
+          <Link id="workflow-finalize" href="/workflow/finalize" >
+            <div className="menu-item">
+              <Checklist />
+              <Typography className="menu-item-text">Finalize</Typography>
+            </div>
+          </Link>
+
+          <Link id="workflow-review" href="/workflow/review">
+            <div className="menu-item">
+              <Share />
+              <Typography className="menu-item-text">Review + Share</Typography>
+            </div>
+          </Link>
+
+        </div>
       </Menu>
     </div>
   );

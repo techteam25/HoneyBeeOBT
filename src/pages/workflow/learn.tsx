@@ -35,7 +35,7 @@ const Learn = () => {
 
   return (
     <WorkflowLayout route={router.pathname}>
-      <TitleCard title="Learn" />
+      <TitleCard title="Learn"/>
       <Box
         style={{
           display: "flex",
