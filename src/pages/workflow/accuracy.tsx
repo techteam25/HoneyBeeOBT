@@ -49,7 +49,7 @@ const Accuracy = () => {
 
   return (
     <WorkflowLayout route={router.pathname}>
-      <TitleCard title="Accuracy Check" />
+      <TitleCard title="Accuracy Check" colorOverride='#008AE6'/>
       <ImageCards
         image={arrayData[data].image}
         description={arrayData[data].data}

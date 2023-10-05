@@ -1,4 +1,4 @@
-import { Card, CardContent, Tab, Tabs, Typography } from "@mui/material";
+import { Card, CardContent, Tab, Tabs, Typography, colors } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect } from "react";
 import axios from "axios";
@@ -84,8 +84,8 @@ const Home = () => {
   }, [arrayData, toggle]);
 
   return (
-    <div className="main-contianer" style={{ paddingTop: "5vh" }}>
-      <Card sx={{ ml: "15vw", mr: "15vw" }}>
+    <div className="main-contianer">
+      <Card sx={{ backgroundColor: "#af2e2e" }}>
         <CardContent>
           <Typography variant="h3" style={{ textAlign: "center" }}>
             Story Template
@@ -101,16 +101,22 @@ const Home = () => {
             aria-label="basic tabs example"
             centered
           >
-            <Tab label="All" {...a11yProps(0)} data-testid="tab-all" />
+            <Tab 
+              label="All" {...a11yProps(0)} 
+              data-testid="tab-all" 
+              sx={{color:"#af2e2e"}}
+              />
             <Tab
               label="In Progress"
               {...a11yProps(1)}
               data-testid="tab-progress"
+              sx={{color:"#af2e2e"}}
             />
             <Tab
               label="Completed"
               {...a11yProps(2)}
               data-testid="tab-completed"
+              sx={{color:"#af2e2e"}}
             />
           </Tabs>
         </Box>
@@ -128,6 +134,8 @@ const Home = () => {
                     flexDirection: "row",
                     alignContent: "flex-start",
                     alignItems: "center",
+                    backgroundColor: "#e1a72e",
+                    color:"black",
                   }}
                 >
                   <Image
@@ -154,6 +162,8 @@ const Home = () => {
                     flexDirection: "row",
                     alignContent: "flex-start",
                     alignItems: "center",
+                    backgroundColor: "#e1a72e",
+                    color:"black",
                   }}
                 >
                   <Image
@@ -178,6 +188,8 @@ const Home = () => {
                     flexDirection: "row",
                     alignContent: "flex-start",
                     alignItems: "center",
+                    backgroundColor: "#e1a72e",
+                    color:"black",
                   }}
                 >
                   <Image

@@ -51,7 +51,7 @@ const Naturalness = () => {
 
   return (
     <WorkflowLayout route={router.pathname}>
-      <TitleCard title="Naturalness Check" />
+      <TitleCard title="Naturalness Check" colorOverride='#009900'/>
       <ImageCards
         image={arrayData[data].image}
         description={arrayData[data].description}
