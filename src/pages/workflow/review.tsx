@@ -37,7 +37,7 @@ const Review = () => {
 
   return (
     <WorkflowLayout route={router.pathname}>
-      <TitleCard title="Review" />
+      <TitleCard title="Review" colorOverride='#FF6600'/>
 
       {arrayData.map((element) => (
         <Card variant="outlined" sx={{ m: "5vw" }} key={element.key}>
