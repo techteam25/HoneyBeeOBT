@@ -70,7 +70,7 @@ const Translate = () => {
 
   return (
     <WorkflowLayout route={router.pathname}>
-      <TitleCard title="Translate" />
+      <TitleCard title="Translate" colorOverride="#ff0000"/>
       <ImageCards
         image={arrayData[data].image}
         description={arrayData[data].data}

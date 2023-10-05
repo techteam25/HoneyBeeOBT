@@ -47,7 +47,7 @@ const Finalize = () => {
 
   return (
     <WorkflowLayout route={router.pathname}>
-      <TitleCard title="Finalize" />
+      <TitleCard title="Finalize" colorOverride='#AA80FF' />
       <Box
         style={{
           display: "flex",

@@ -149,50 +149,50 @@ const HamburgerMenu = () => {
           </Link>
 
           <Link id="workflow-learn" href="/workflow/learn">
-            <div className="menu-item">
-              <Lightbulb />
+            <div className="menu-item workflow-menu-item">
+              <Lightbulb sx={{color:"#00CC88"}}/>
               <Typography className="menu-item-text">Learn</Typography>
             </div>
           </Link>
 
           <Link id="workflow-translate" href="/workflow/translate">
-            <div className="menu-item">
-              <Translate />
+            <div className="menu-item workflow-menu-item">
+              <Translate sx={{color:"#ff0000"}}/>
               <Typography className="menu-item-text">Translate and Revise</Typography>
             </div>
           </Link>
 
           <Link id="workflow-naturalness" href="/workflow/naturalness">
-            <div className="menu-item">
-              <Park />
+            <div className="menu-item workflow-menu-item">
+              <Park sx={{color:"#009900"}}/>
               <Typography className="menu-item-text">Naturalness Checks</Typography>
             </div>
           </Link>
 
           <Link id="workflow-accuracy" href="/workflow/accuracy">
-            <div className="menu-item">
-              <CheckCircleOutline />
+            <div className="menu-item workflow-menu-item">
+              <CheckCircleOutline sx={{color:"#008AE6"}}/>
               <Typography className="menu-item-text">Accuracy Check</Typography>
             </div>
           </Link>
 
           <Link id="workflow-voice" href="/workflow/voice">
-            <div className="menu-item">
-              <KeyboardVoice />
+            <div className="menu-item workflow-menu-item">
+              <KeyboardVoice sx={{color:"#FF0066"}}/>
               <Typography className="menu-item-text">Voice Studio</Typography>
             </div>
           </Link>
 
           <Link id="workflow-finalize" href="/workflow/finalize" >
-            <div className="menu-item">
-              <Checklist />
+            <div className="menu-item workflow-menu-item">
+              <Checklist sx={{color:"#AA80FF"}}/>
               <Typography className="menu-item-text">Finalize</Typography>
             </div>
           </Link>
 
           <Link id="workflow-review" href="/workflow/review">
-            <div className="menu-item">
-              <Share />
+            <div className="menu-item workflow-menu-item">
+              <Share sx={{color:"#FF6600"}}/>
               <Typography className="menu-item-text">Review + Share</Typography>
             </div>
           </Link>

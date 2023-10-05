@@ -80,17 +80,23 @@ Note: Beware of modifying this element as it can break the animations - you shou
   justify-content: flex-start;
 }
 
+.menu-item-text{
+  margin-left: 10px;
+  font-size: 16px;
+}
+
 .menu-item:hover {
   color: #ffffff;
 }
 
 .user-button{
-  background-color: #af2e2e;
+  background-color: #e1a713;
+  color: black;
   justify-content: space-evenly;
 }
 
 h4 {
-  background-color: #e1a713;
+  background-color: #af2e2e;
   padding: 2px;
   text-align: center;
   color: black;
@@ -98,17 +104,19 @@ h4 {
 
 .workflow-menu{
   padding: 15px;
+  border: #e1a713 solid 7px;
   border-radius: 7%;
-  background-color: #af2e2e;
+  background-color: #ffffff;
   color: black;
   margin-top: 20px;
 }
 
-.workflow-title{
-  margin-bottom: 15px;
+.workflow-menu-item:hover{
+  color: #af2e2e;
 }
 
-.menu-item-text{
-  margin-left: 10px;
-  font-size: 16px;
+.workflow-title{
+  margin-bottom: 15px;
+  line-height: 200%;
 }
+

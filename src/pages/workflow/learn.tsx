@@ -33,9 +33,9 @@ const Learn = () => {
     getData();
   }, [arrayData, toggle]);
 
-  return (
+  return ( 
     <WorkflowLayout route={router.pathname}>
-      <TitleCard title="Learn"/>
+      <TitleCard title="Learn" colorOverride="#00CC88"/>
       <Box
         style={{
           display: "flex",
@@ -46,7 +46,8 @@ const Learn = () => {
           marginRight: "15vw",
           marginTop: "5vh",
           marginBottom: "5vh",
-        }}
+        }} 
+        
       >
         {arrayData.map((element) => {
           const address: string = DOMPurify.sanitize(element.video);

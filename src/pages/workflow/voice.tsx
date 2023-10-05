@@ -48,7 +48,7 @@ const VoiceStudio = () => {
 
   return (
     <WorkflowLayout route={router.pathname}>
-      <TitleCard title="Voice Studio" />
+      <TitleCard title="Voice Studio" colorOverride='#FF0066'/>
       <ImageCards
         image={arrayData[data].image}
         description={arrayData[data].data}

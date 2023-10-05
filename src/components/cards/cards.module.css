@@ -5,7 +5,8 @@
 
 .cards {
     padding: 1rem 2rem;
-    background-color: var(--card-bgc);
+    /* background-color: var(--card-bgc); */
+    /* background-color: aqua; */
 }
 
 .imageCards {
