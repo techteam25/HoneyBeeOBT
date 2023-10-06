@@ -2,6 +2,7 @@ import {
   Button,
   Card,
   CardContent,
+  CircularProgress,
   Tab,
   Tabs,
   Typography,
@@ -24,7 +25,13 @@ const User = () => {
   const router = useRouter();
   const { user, error, isLoading } = useUser();
   //Loading State
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading)
+    return (
+      <div style={{ textAlign: "center", marginTop: "10vh" }}>
+        <Typography>Authentication is Loading...</Typography>
+        <CircularProgress />
+      </div>
+    );
   //Error State
   if (error) return <div>{error.message}</div>;
 

@@ -2,6 +2,7 @@ import {
   Button,
   Card,
   CardContent,
+  CircularProgress,
   Tab,
   Tabs,
   Typography,
@@ -26,8 +27,9 @@ const Home = () => {
   //Loading State
   if (isLoading)
     return (
-      <div>
-        <Typography>Loading...</Typography>
+      <div style={{ textAlign: "center", marginTop: "10vh" }}>
+        <Typography>Authentication is Loading...</Typography>
+        <CircularProgress />
       </div>
     );
   //Error State
