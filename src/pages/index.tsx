@@ -3,23 +3,12 @@ import {
   Card,
   CardContent,
   CircularProgress,
-  Tab,
-  Tabs,
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useEffect } from "react";
-import axios from "axios";
-import Image from "next/image";
+import React from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/router";
-
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
 
 const Home = () => {
   const router = useRouter();
