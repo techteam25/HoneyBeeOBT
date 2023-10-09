@@ -1,4 +1,11 @@
-import { Card, CardContent, Tab, Tabs, Typography, colors } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Tab,
+  Tabs,
+  Typography,
+  colors,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect } from "react";
 import axios from "axios";
@@ -48,7 +55,6 @@ function a11yProps(index: number) {
 }
 
 const Home = () => {
-  const { user, error, isLoading } = useUser();
   const [toggle, setToggle] = React.useState(true);
   const [arrayData, setArrayData] = React.useState<JSONData[]>([]);
   const [inProgress, setInProgress] = React.useState<JSONData[]>([]);
@@ -101,22 +107,23 @@ const Home = () => {
             aria-label="basic tabs example"
             centered
           >
-            <Tab 
-              label="All" {...a11yProps(0)} 
-              data-testid="tab-all" 
-              sx={{color:"#af2e2e"}}
-              />
+            <Tab
+              label="All"
+              {...a11yProps(0)}
+              data-testid="tab-all"
+              sx={{ color: "#af2e2e" }}
+            />
             <Tab
               label="In Progress"
               {...a11yProps(1)}
               data-testid="tab-progress"
-              sx={{color:"#af2e2e"}}
+              sx={{ color: "#af2e2e" }}
             />
             <Tab
               label="Completed"
               {...a11yProps(2)}
               data-testid="tab-completed"
-              sx={{color:"#af2e2e"}}
+              sx={{ color: "#af2e2e" }}
             />
           </Tabs>
         </Box>
@@ -135,7 +142,7 @@ const Home = () => {
                     alignContent: "flex-start",
                     alignItems: "center",
                     backgroundColor: "#e1a72e",
-                    color:"black",
+                    color: "black",
                   }}
                 >
                   <Image
@@ -163,7 +170,7 @@ const Home = () => {
                     alignContent: "flex-start",
                     alignItems: "center",
                     backgroundColor: "#e1a72e",
-                    color:"black",
+                    color: "black",
                   }}
                 >
                   <Image
@@ -189,7 +196,7 @@ const Home = () => {
                     alignContent: "flex-start",
                     alignItems: "center",
                     backgroundColor: "#e1a72e",
-                    color:"black",
+                    color: "black",
                   }}
                 >
                   <Image

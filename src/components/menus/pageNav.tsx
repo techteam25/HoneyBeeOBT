@@ -1,7 +1,7 @@
-import { Box, Button } from "@mui/material";
-import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
-import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
-import styles from './pageNav.module.css';
+import { Button } from "@mui/material";
+import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
+import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
+import styles from "./pageNav.module.css";
 
 const PageNav = (props: {
   page: number;
@@ -10,7 +10,7 @@ const PageNav = (props: {
 }) => {
   return (
     <div className={styles.navContainer}>
-      <div className={styles.backButton} >
+      <div className={styles.backButton}>
         <Button
           size="large"
           onClick={() => {
