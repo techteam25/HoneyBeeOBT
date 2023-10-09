@@ -7,7 +7,6 @@ import {
 } from "@mui/material";
 import styles from "./pageNav.module.css";
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
-import { Typography } from "../UI/Typography";
 import React from "react";
 import axios from "axios";
 

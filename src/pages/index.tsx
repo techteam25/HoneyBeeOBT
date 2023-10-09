@@ -2,23 +2,13 @@ import {
   Button,
   Card,
   CardContent,
-  Tab,
-  Tabs,
+  CircularProgress,
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useEffect } from "react";
-import axios from "axios";
-import Image from "next/image";
+import React from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/router";
-
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
 
 const Home = () => {
   const router = useRouter();
@@ -26,8 +16,9 @@ const Home = () => {
   //Loading State
   if (isLoading)
     return (
-      <div>
-        <Typography>Loading...</Typography>
+      <div style={{ textAlign: "center", marginTop: "10vh" }}>
+        <Typography>Authentication is Loading...</Typography>
+        <CircularProgress />
       </div>
     );
   //Error State

@@ -1,5 +1,4 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next';
 import path from 'path';
 import { promises as fs } from 'fs';
 import rateLimit from 'express-rate-limit'
@@ -11,16 +10,12 @@ const getIP = (request: any) =>
   request.headers['x-real-ip'] ||
   request.connection.remoteAddress
 
-const limit = 10
-const windowMs = 60 * 1_000
-const delayAfter = Math.round(limit / 2)
 const applyMiddleware = (middleware: any) => (request: any, response: any) =>
   new Promise((resolve, reject) => {
     middleware(request, response, (result: unknown) =>
       result instanceof Error ? reject(result) : resolve(result)
     )
   })
-const delayMs = 500
 
 export const getRateLimitMiddlewares = ({
   limit = 10,
