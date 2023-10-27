@@ -15,7 +15,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.14.11",
-    "@mui/material": "^5.14.7",
+    "@mui/material": "^5.14.12",
     "@testing-library/user-event": "^14.4.3",
     "@types/node": "^18.18.3",
     "@types/react": "^18.2.24",
