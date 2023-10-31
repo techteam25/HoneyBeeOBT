@@ -20,13 +20,6 @@ export default function handler(
         key: "story2", 
         progress: false, 
         completed: true
-      }, record3: {
-        name: "Jesus Rising", 
-        description: "Here is more info", 
-        image: "/honeybee_logo.png", 
-        key: "story3", 
-        progress: true, 
-        completed: false
       }
     })
 }
