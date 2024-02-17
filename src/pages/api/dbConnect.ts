@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res :NextApiResponse)
         .then(async function () {
           let numbers = mongoose.model("userData");
           const userConnect = await numbers.find().select(`${data.userID}`);
-          res.status(200).send(JSON.stringify(userConnect));
+          res.status(200).send(userConnect.toString);
         })
         .catch(function (err: Error) {
           console.log(err);
@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res :NextApiResponse)
     } else {
       let numbers = mongoose.model("userData");
       const userConnect2 = await numbers.find().select(`${data.userID}`);
-      res.status(200).send(JSON.stringify(userConnect2));
+      res.status(200).send(userConnect2.toString);
     }
   } catch (err) {
     console.log(err);
