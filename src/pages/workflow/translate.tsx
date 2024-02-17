@@ -1,4 +1,4 @@
-import { Box, Card, CardContent } from "@mui/material";
+import { Box, Card, CardContent, CircularProgress, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import WorkflowLayout from "./layout";
 import axios from "axios";
@@ -24,6 +24,30 @@ interface AudioData {
   title: string;
 }
 
+interface selectedData {
+  learn: {
+    video: string,
+    title: string
+  },
+  passages:[
+    {
+      image: string,
+      image_description: string,
+      book: string,
+      chapter: number,
+      verses: string,
+      text: string,
+      notes: [
+        {
+          note: string,
+          words: string,
+          more: string
+        }
+      ]
+    }
+  ]
+}
+
 const Translate = () => {
   const [toggle, setToggle] = React.useState(true);
   const [arrayData, setArrayData] = React.useState<JSONData[]>([
@@ -37,19 +61,20 @@ const Translate = () => {
       key: "story1",
     },
   ]);
+  const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState(0);
   const [audioRecordings, setAudioRecordings] = React.useState<AudioData[]>([]);
   const router = useRouter();
+  const [selectedData, setSelectedData] = React.useState<selectedData>({} as selectedData);
 
   useEffect(() => {
     setToggle(false);
     async function getData() {
       if (toggle) {
-        await axios.get("/api/workflow/selected").then((response) => {
-          setArrayData([]);
-          for (let int in response.data) {
-            setArrayData((arrayData) => [...arrayData, response.data[int]]);
-          }
+        await axios.get("/api/workflow/testSelected").then((response) => {
+          setSelectedData(response.data);
+          console.log(response.data.passages[0]);
+          setLoading(false);
         });
         return;
       }
@@ -70,54 +95,60 @@ const Translate = () => {
 
   return (
     <WorkflowLayout route={router.pathname}>
-      <TitleCard title="Translate" colorOverride="#ff0000"/>
-      <ImageCards
-        image={arrayData[data].image}
-        description={arrayData[data].data}
-      />
-      <ScriptureCards
-        name={arrayData[data].name}
-        passage={arrayData[data].passage}
-      />
-      {!!audioRecordings.length && <Card
-        style={{
-          display: "flex",
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          marginLeft: "15vw",
-          marginRight: "15vw",
-          marginTop: "5vh",
-          marginBottom: "5vh",
-        }}
-        variant="outlined"
-      >
-        <CardContent>
-          {audioRecordings.map((element) => {
-            if (element.index == data) {
-              return <audio src={element.audio} key={element.audio} controls />;
-            }
-          })}
-        </CardContent>
-      </Card>}
-      <PageNav page={data} setPage={setData} length={arrayData.length} />
-      <Box
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "5vh",
-        }}
-      >
-        <AudioRecorder
-          onRecordingComplete={addAudioElement}
-          audioTrackConstraints={{
-            noiseSuppression: true,
-            echoCancellation: true,
-          }}
-          downloadOnSavePress={true}
-          downloadFileExtension="mp3"
+      {loading ? 
+       <div><Typography>Loading</Typography><CircularProgress /></div> :
+       <div>
+        <TitleCard title="Translate" colorOverride="#ff0000"/>
+        <ImageCards
+          image={selectedData.passages? selectedData.passages[data].image : "/honeybee_logo.png"}
+          description={selectedData.passages? selectedData.passages[data].image_description : "Loading"}
         />
-      </Box>
+        <ScriptureCards
+          name={`${selectedData.passages? selectedData.passages[data].book : "Loading"} ${JSON.stringify(selectedData.passages ? selectedData.passages[data].chapter : "")}:${selectedData.passages ? selectedData.passages[data].verses : ""}`}
+          passage={selectedData.passages ? selectedData.passages[data].text : "Loading"}
+        />
+        {!!audioRecordings.length && <Card
+          style={{
+            display: "flex",
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center",
+            marginLeft: "15vw",
+            marginRight: "15vw",
+            marginTop: "5vh",
+            marginBottom: "5vh",
+          }}
+          variant="outlined"
+        >
+          <CardContent>
+            {audioRecordings.map((element) => {
+              if (element.index == data) {
+                return <audio src={element.audio} key={element.audio} controls />;
+              }
+            })}
+          </CardContent>
+        </Card>}
+        <PageNav page={data} setPage={setData} length={selectedData.passages.length} />
+        <Box
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "5vh",
+          }}
+        >
+          <AudioRecorder
+            onRecordingComplete={addAudioElement}
+            audioTrackConstraints={{
+              noiseSuppression: true,
+              echoCancellation: true,
+            }}
+            downloadOnSavePress={true}
+            downloadFileExtension="mp3"
+          />
+        </Box>
+        </div>
+      }
+      
     </WorkflowLayout>
   );
 };

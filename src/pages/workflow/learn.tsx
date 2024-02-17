@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardContent, CircularProgress, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import WorkflowLayout from "./layout";
 import axios from "axios";
@@ -7,31 +7,49 @@ import DOMPurify from "dompurify";
 import TitleCard from "@/components/cards/titleCard";
 import { useRouter } from "next/router";
 
-interface JSONData {
-  name: string;
-  video: string;
-  key: string;
+interface selectedData {
+  learn: {
+    video: string,
+    title: string
+  },
+  passages:[
+    {
+      image: string,
+      image_description: string,
+      book: string,
+      chapter: number,
+      verses: string,
+      text: string,
+      notes: [
+        {
+          note: string,
+          words: string,
+          more: string
+        }
+      ]
+    }
+  ]
 }
 
 const Learn = () => {
   const [toggle, setToggle] = React.useState(true);
-  const [arrayData, setArrayData] = React.useState<JSONData[]>([]);
+  const [selectedData, setSelectedData] = React.useState<selectedData>({} as selectedData);
+  const [loading, setLoading] = React.useState(true);
   const router = useRouter();
 
   useEffect(() => {
     setToggle(false);
     async function getData() {
       if (toggle) {
-        await axios.get("/api/workflow/learn").then((response) => {
-          for (let int in response.data) {
-            setArrayData((arrayData) => [...arrayData, response.data[int]]);
-          }
+        await axios.get("/api/workflow/testSelected").then((response) => {
+          setSelectedData(response.data);
+          setLoading(false);
         });
         return;
       }
     }
     getData();
-  }, [arrayData, toggle]);
+  }, [ toggle]);
 
   return ( 
     <WorkflowLayout route={router.pathname}>
@@ -49,16 +67,15 @@ const Learn = () => {
         }} 
         
       >
-        {arrayData.map((element) => {
-          const address: string = DOMPurify.sanitize(element.video);
-          const address2 = address.split("https://youtube.com/");
-          return (
-            <ReactPlayer
-              url={`https://youtube.com/ + ${address2}`}
-              key={element.key}
+        {
+          loading ? 
+            <CircularProgress />
+          : <ReactPlayer
+              url={selectedData.learn.video ? DOMPurify.sanitize(selectedData.learn.video) : DOMPurify.sanitize("https://www.youtube.com/watch?v=dQw4w9WgXcQ")}
+              key={selectedData.learn.title ? selectedData.learn.title : "Learn"}
             />
-          );
-        })}
+        }
+        
       </Box>
     </WorkflowLayout>
   );
