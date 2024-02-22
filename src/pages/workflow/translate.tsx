@@ -125,7 +125,6 @@ const Translate = () => {
 
   const addAudioElement = (blob: Blob | MediaSource) => {
     const url = URL.createObjectURL(blob);
-    arrayData[data].audio = url;
     const packer = {
       index: data,
       audio: url,
@@ -235,6 +234,11 @@ const Translate = () => {
               downloadFileExtension="mp3"
             />
           </Box>
+          {audioRecordings.map((element) => {
+            if (element.index === data) {
+              return <audio src={element.audio} key={element.audio} controls />;
+            }
+          })}
         </React.Fragment>
       )}
     </WorkflowLayout>
