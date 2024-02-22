@@ -1,5 +1,5 @@
 import { Box, Card, CardContent, CircularProgress } from "@mui/material";
-import React, { useEffect } from "react";
+import React, { ReactNode, useEffect } from "react";
 import WorkflowLayout from "./layout";
 import axios from "axios";
 import { AudioRecorder } from "react-audio-voice-recorder";
@@ -9,6 +9,9 @@ import ImageCards from "@/components/cards/imageCards";
 import TitleCard from "@/components/cards/titleCard";
 import { useRouter } from "next/router";
 import { Typography } from "@/components/UI/Typography";
+
+import exegeticalHelps from "../../../public/exegeticalHelps.json";
+import { get } from "http";
 
 interface JSONData {
   name: string;
@@ -70,6 +73,38 @@ const Translate = () => {
   const [selectedData, setSelectedData] = React.useState<selectedData>(
     {} as selectedData
   );
+  const [arrayPassage, setArrayPassage] = React.useState<string[]>([]);
+
+  function exegeticalSetter() {
+    var temp: ReactNode[] = [];
+    arrayPassage.map((item) => {
+      var alreadyPushed = false;
+      exegeticalHelps.map((element, index) => {
+        if (index === exegeticalHelps.length - 1 && !alreadyPushed) {
+          temp.push(item + " ");
+        }
+        if (item.includes(element.term)) {
+          console.log(element.term);
+          temp.push(
+            <a href="/workflow/exegeticalNote">
+              <span style={{ color: "blue" }}>
+                <u>{item + " "} </u>
+              </span>
+            </a>
+          );
+          alreadyPushed = true;
+        }
+      });
+    });
+    return temp;
+  }
+
+  function processExegeticalHelps() {
+    var temp = [];
+    temp.push(<Typography as="p">{exegeticalSetter()}</Typography>);
+
+    return temp;
+  }
 
   useEffect(() => {
     setToggle(false);
@@ -77,8 +112,11 @@ const Translate = () => {
       if (toggle) {
         await axios.get("/api/workflow/testSelected").then((response) => {
           setSelectedData(response.data);
+          var temp = response.data.passages[data].text.split(" ");
+          setArrayPassage(temp);
           setLoading(false);
         });
+
         return;
       }
     }
@@ -104,7 +142,9 @@ const Translate = () => {
           <CircularProgress />
         </div>
       ) : (
-        <div>
+        <React.Fragment>
+          {" "}
+          {/* Wrap the children inside a React fragment */}
           <TitleCard title="Translate" colorOverride="#ff0000" />
           <ImageCards
             image={
@@ -172,6 +212,12 @@ const Translate = () => {
             setPage={setData}
             length={selectedData.passages.length}
           />
+          <Card>
+            <CardContent>
+              <Typography as="h2">Exegetical Helps</Typography>
+              {processExegeticalHelps()}
+            </CardContent>
+          </Card>
           <Box
             style={{
               display: "flex",
@@ -189,7 +235,7 @@ const Translate = () => {
               downloadFileExtension="mp3"
             />
           </Box>
-        </div>
+        </React.Fragment>
       )}
     </WorkflowLayout>
   );
