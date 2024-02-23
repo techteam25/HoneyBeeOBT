@@ -3,6 +3,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import multer from 'multer';
 import path from 'path';
+import { Request, Response } from 'express';
 
 const storage = multer.diskStorage({
   destination: './public/uploads',
@@ -20,16 +21,18 @@ export const config = {
 };
 
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
+  req: Request,
+  res: Response<any>
 ) {
   upload.array('files')(req, res, (err) => {
     if (err) {
       return res.status(500).json({ error: err.message });
     }
-    const filePaths = req.files.map((file: Express.Multer.File) => {
-      return `/uploads/${file.filename}`;
-    });
-    res.status(200).json({ success: true, filePaths });
+    if (req.files && Array.isArray(req.files)) { // Add a type check for req.files
+      const filePaths = req.files.map((file: Express.Multer.File) => {
+        return `/uploads/${file.filename}`;
+      });
+      res.status(200).json({ success: true, filePaths });
+    }
   });
 }

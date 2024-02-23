@@ -115,6 +115,7 @@ const Translate = () => {
           setSelectedData(response.data);
           var temp = response.data.passages[data].text.split(" ");
           setArrayPassage(temp);
+          processExegeticalHelps();
           setLoading(false);
         });
 
@@ -122,7 +123,7 @@ const Translate = () => {
       }
     }
     getData();
-  }, [toggle]);
+  }, [data, toggle, arrayPassage]);
 
   const addAudioElement = (blob: Blob | MediaSource) => {
     const url = URL.createObjectURL(blob);
