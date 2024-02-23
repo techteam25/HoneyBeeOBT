@@ -12,6 +12,7 @@ import { Typography } from "@/components/UI/Typography";
 
 import exegeticalHelps from "../../../public/exegeticalHelps.json";
 import { get } from "http";
+import Link from "next/link";
 
 interface JSONData {
   name: string;
@@ -86,11 +87,11 @@ const Translate = () => {
         if (item.includes(element.term)) {
           console.log(element.term);
           temp.push(
-            <a href="/workflow/exegeticalNote">
+            <Link href={{pathname: "/workflow/exegeticalNote", query:{ term: element.term, notes: element.notes}}}>
               <span style={{ color: "blue" }}>
                 <u>{item + " "} </u>
               </span>
-            </a>
+            </Link>
           );
           alreadyPushed = true;
         }
