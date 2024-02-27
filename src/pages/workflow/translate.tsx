@@ -103,10 +103,6 @@ const Translate = () => {
     return temp;
   }
 
-  function setPage() {
-    setData;
-  }
-
   function processExegeticalHelps() {
     var temp = [];
     temp.push(<Typography as="p">{exegeticalSetter()}</Typography>);

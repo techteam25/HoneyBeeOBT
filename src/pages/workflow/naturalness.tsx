@@ -5,7 +5,7 @@ import {
   CardContent,
   CircularProgress,
 } from "@mui/material";
-import React, { useEffect } from "react";
+import React, { ReactNode, useEffect } from "react";
 import WorkflowLayout from "./layout";
 import axios from "axios";
 import PageNav from "@/components/menus/pageNav";
@@ -15,6 +15,8 @@ import TitleCard from "@/components/cards/titleCard";
 import { useRouter } from "next/router";
 import { AudioRecorder } from "react-audio-voice-recorder";
 import { Typography } from "@/components/UI/Typography";
+import exegeticalHelps from "../../../public/exegeticalHelps.json";
+import Link from "next/link";
 
 interface JSONData {
   name: string;
@@ -77,6 +79,43 @@ const Naturalness = () => {
 
   const [audioRecordings, setAudioRecordings] = React.useState<AudioData[]>([]);
   const router = useRouter();
+  const [arrayPassage, setArrayPassage] = React.useState<string[]>([]);
+
+  function exegeticalSetter() {
+    var temp: ReactNode[] = [];
+    arrayPassage.map((item) => {
+      var alreadyPushed = false;
+      exegeticalHelps.map((element, index) => {
+        if (index === exegeticalHelps.length - 1 && !alreadyPushed) {
+          temp.push(item + " ");
+        }
+        if (item.includes(element.term)) {
+          console.log(element.term);
+          temp.push(
+            <Link
+              href={{
+                pathname: "/workflow/exegeticalNote",
+                query: { term: element.term, notes: element.notes },
+              }}
+            >
+              <span style={{ color: "blue" }}>
+                <u>{item + " "} </u>
+              </span>
+            </Link>
+          );
+          alreadyPushed = true;
+        }
+      });
+    });
+    return temp;
+  }
+
+  function processExegeticalHelps() {
+    var temp = [];
+    temp.push(<Typography as="p">{exegeticalSetter()}</Typography>);
+
+    return temp;
+  }
 
   useEffect(() => {
     setToggle(false);
@@ -84,7 +123,9 @@ const Naturalness = () => {
       if (toggle) {
         await axios.get("/api/workflow/testSelected").then((response) => {
           setSelectedData(response.data);
-          console.log(response.data.passages[0]);
+          var temp = response.data.passages[data].text.split(" ");
+          setArrayPassage(temp);
+          processExegeticalHelps();
           setLoading(false);
         });
         return;
@@ -138,9 +179,7 @@ const Naturalness = () => {
               selectedData.passages ? selectedData.passages[data].verses : ""
             }`}
             passage={
-              selectedData.passages
-                ? selectedData.passages[data].text
-                : "Loading"
+              selectedData.passages ? processExegeticalHelps() : "Loading"
             }
           />
           {!!audioRecordings.length && (
@@ -179,6 +218,9 @@ const Naturalness = () => {
           <PageNav
             page={data}
             setPage={setData}
+            passage={selectedData}
+            exegeticalSetter={processExegeticalHelps}
+            setPassage={setArrayPassage}
             length={selectedData.passages.length}
           />
           <Box
