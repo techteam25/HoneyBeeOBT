@@ -9,9 +9,7 @@ import ImageCards from "@/components/cards/imageCards";
 import TitleCard from "@/components/cards/titleCard";
 import { useRouter } from "next/router";
 import { Typography } from "@/components/UI/Typography";
-
 import exegeticalHelps from "../../../public/exegeticalHelps.json";
-import { get } from "http";
 import Link from "next/link";
 
 interface JSONData {
@@ -87,7 +85,12 @@ const Translate = () => {
         if (item.includes(element.term)) {
           console.log(element.term);
           temp.push(
-            <Link href={{pathname: "/workflow/exegeticalNote", query:{ term: element.term, notes: element.notes}}}>
+            <Link
+              href={{
+                pathname: "/workflow/exegeticalNote",
+                query: { term: element.term, notes: element.notes },
+              }}
+            >
               <span style={{ color: "blue" }}>
                 <u>{item + " "} </u>
               </span>
@@ -98,6 +101,10 @@ const Translate = () => {
       });
     });
     return temp;
+  }
+
+  function setPage() {
+    setData;
   }
 
   function processExegeticalHelps() {
@@ -170,9 +177,7 @@ const Translate = () => {
               selectedData.passages ? selectedData.passages[data].verses : ""
             }`}
             passage={
-              selectedData.passages
-                ? selectedData.passages[data].text
-                : "Loading"
+              selectedData.passages ? processExegeticalHelps() : "Loading"
             }
           />
           {!!audioRecordings.length && (
@@ -211,14 +216,11 @@ const Translate = () => {
           <PageNav
             page={data}
             setPage={setData}
+            passage={selectedData}
+            exegeticalSetter={processExegeticalHelps}
+            setPassage={setArrayPassage}
             length={selectedData.passages.length}
           />
-          <Card>
-            <CardContent>
-              <Typography as="h2">Exegetical Helps</Typography>
-              {processExegeticalHelps()}
-            </CardContent>
-          </Card>
           <Box
             style={{
               display: "flex",
