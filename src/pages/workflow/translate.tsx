@@ -11,6 +11,9 @@ import { useRouter } from "next/router";
 import { Typography } from "@/components/UI/Typography";
 import exegeticalHelps from "../../../public/exegeticalHelps.json";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { set } from "mongoose";
+import { getLocalStorageItem } from "@/components/util/localStorage";
 
 interface JSONData {
   name: string;
@@ -73,6 +76,8 @@ const Translate = () => {
     {} as selectedData
   );
   const [arrayPassage, setArrayPassage] = React.useState<string[]>([]);
+  const selected = getLocalStorageItem("selected");
+  const [isSelected, setIsSelected] = React.useState(false);
 
   function exegeticalSetter() {
     var temp: ReactNode[] = [];
@@ -83,7 +88,6 @@ const Translate = () => {
           temp.push(item + " ");
         }
         if (item.includes(element.term)) {
-          console.log(element.term);
           temp.push(
             <Link
               href={{
@@ -114,13 +118,15 @@ const Translate = () => {
     setToggle(false);
     async function getData() {
       if (toggle) {
-        await axios.get("/api/workflow/testSelected").then((response) => {
-          setSelectedData(response.data);
-          var temp = response.data.passages[data].text.split(" ");
-          setArrayPassage(temp);
-          processExegeticalHelps();
-          setLoading(false);
-        });
+        await axios
+          .post("/api/workflow/listofTemplates", { selected: selected })
+          .then((response) => {
+            setSelectedData(response.data);
+            var temp = response.data.passages[data].text.split(" ");
+            setArrayPassage(temp);
+            processExegeticalHelps();
+            setLoading(false);
+          });
 
         return;
       }

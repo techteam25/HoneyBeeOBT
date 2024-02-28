@@ -1,0 +1,44 @@
+{
+  "learn": {
+    "video": "https://www.youtube.com/watch?v=dLIabZc0O4c",
+    "title": "Jonah1-2"
+  },
+  "passages": [
+    {
+      "image": "/assets/template1/1.jpg",
+      "image_description": "Evil people standing around",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah1.1-2.m4a",
+      "book": "Jonah",
+      "chapter": 1,
+      "verses": "1-2",
+      "text": "One day Yahweh said to the prophet Jonah, who was Amittai’s son, 2 “I have seen how wicked are the people who live in the great city called Nineveh. Therefore, go there and warn the people that I am planning to destroy their city because of their sins.”",
+      "notes": [
+        {
+          "note": "OR There was a prophet in Israel named Jonah who was Amittai's son. One day Yahweh said to him: OR Jonah was a prophet in Israel. His father was Amittai. One day Yahweh said to him",
+          "words": "One day Yahweh said to the prophet Jonah,who was Amittai’s son"
+        },
+        {
+          "note": "OR the large/important city [in Assyria] called Nineveh",
+          "words": "the great city called Nineveh",
+          "additional": "Jonah 3:1"
+        }
+      ]
+    },
+    {
+      "image": "/assets/template1/2.jpg",
+      "image_description": "Jonah getting onto a boat being loaded",
+      "audio": "/assets//templates/Jonah1-2/audio/Jonah1.3.m4a",
+      "book": "Jonah",
+      "chapter": 1,
+      "verses": "3",
+      "text": "But instead of going to Nineveh, Jonah went in the direction opposite to where Yahweh told him to go. He went down to Joppa city. There he paid the fare to travel on a ship that was going to Tarshish city, to escape from Yahweh and avoid doing what Yahweh told him to do. He got on the ship, and then went down to a lower deck inside the ship, lay down, and went to sleep.",
+      "notes": [
+        {
+          "note": "OR went  OR traveled",
+          "words": "went down",
+          "more": "Jonah had to travel from a high elevation (Jerusalem city) down to Joppa city which was a low elevation, on the beach, at sea level, where a ship could be docked."
+        }
+      ]
+    }
+  ]
+}
