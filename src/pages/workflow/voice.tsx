@@ -149,37 +149,6 @@ const VoiceStudio = () => {
     setAudioRecordings((audioRecordings) => [...audioRecordings, packer]);
   };
 
-  const fullAudioDownload = () => {
-    var tempAudio = [] as string[];
-    selectedData.passages.forEach((element, index) => {
-      tempAudio.push(selectedData.passages[index].audio);
-    });
-    console.log(tempAudio);
-    let crunker = new Crunker();
-    crunker
-      .fetchAudio(...tempAudio)
-      .then((buffers) => crunker.concatAudio(buffers))
-      .then((merged) => crunker.export(merged, "audio/mp3"))
-      .then((output) => crunker.download(output.blob))
-      .catch((error) => {
-        throw new Error(error);
-      });
-  };
-
-  function setMultipleFiles(input: HTMLInputElement, data: File[]) {
-    // ClipboardEvent.clipboardData has a greater support than the constructor
-    // but the result it's the same
-    const dt = new ClipboardEvent("").clipboardData || new DataTransfer();
-
-    for (const file of data) {
-      dt.items.add(file);
-    }
-
-    if (dt.files.length) {
-      input.files = dt.files;
-    }
-  }
-
   return (
     <WorkflowLayout route={router.pathname}>
       {loading ? (
@@ -277,14 +246,6 @@ const VoiceStudio = () => {
           </Box>
         </div>
       )}
-      <input name="myfile" type="file" multiple />
-      <Button
-        onClick={() => {
-          fullAudioDownload();
-        }}
-      >
-        Audio Export
-      </Button>
     </WorkflowLayout>
   );
 };

@@ -9,6 +9,8 @@ import {
   setLocalStorageItem,
 } from "@/components/util/localStorage";
 import { get } from "http";
+import WorkflowLayout from "./layout";
+import TitleCard from "@/components/cards/titleCard";
 
 const Select = () => {
   const [list, setList] = React.useState<any[]>([]);
@@ -22,25 +24,28 @@ const Select = () => {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <Typography as="h2">Choose a Template to get started:</Typography>
-      {list.map((item, index) => {
-        return (
-          <div key={index}>
-            <Button
-              onClick={() => {
-                console.log(item);
-                setLocalStorageItem("selected", item.learn.title);
-                console.log(getLocalStorageItem("selected"));
-                router.push({
-                  pathname: "/workflow/translate",
-                });
-              }}
-            >
-              {item.learn.title}
-            </Button>
-          </div>
-        );
-      })}
+      <WorkflowLayout route={router.pathname}>
+        <TitleCard title="Select Template" colorOverride="#eabe0a" />
+        <Typography as="h2">Choose a Template to get started:</Typography>
+        {list.map((item, index) => {
+          return (
+            <div key={index}>
+              <Button
+                onClick={() => {
+                  console.log(item);
+                  setLocalStorageItem("selected", item.learn.title);
+                  console.log(getLocalStorageItem("selected"));
+                  router.push({
+                    pathname: "/workflow/translate",
+                  });
+                }}
+              >
+                {item.learn.title}
+              </Button>
+            </div>
+          );
+        })}
+      </WorkflowLayout>
     </div>
   );
 };

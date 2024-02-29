@@ -17,6 +17,7 @@ import { AudioRecorder } from "react-audio-voice-recorder";
 import { Typography } from "@/components/UI/Typography";
 import exegeticalHelps from "../../../public/exegeticalHelps.json";
 import Link from "next/link";
+import AudioUploader from "@/components/util/AudioUploader";
 
 interface JSONData {
   name: string;
@@ -239,6 +240,18 @@ const Naturalness = () => {
               downloadOnSavePress={true}
               downloadFileExtension="mp3"
             />
+          </Box>
+
+          <Box
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              marginTop: "5vh",
+            }}
+          >
+            <Typography as="h2">Upload Audio To Send for Check:</Typography>
+            <AudioUploader />
           </Box>
         </div>
       )}
