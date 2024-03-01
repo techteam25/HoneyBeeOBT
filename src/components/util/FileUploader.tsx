@@ -17,7 +17,6 @@ const FileUpload: React.FC = () => {
       Array.from(selectedFiles).forEach((file) => {
         formData.append("files", file);
       });
-
       try {
         const response = await fetch("/api/upload", {
           method: "POST",
@@ -39,7 +38,11 @@ const FileUpload: React.FC = () => {
   return (
     <div>
       <input type="file" multiple onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload</button>
+      <button
+        onClick={() => console.log("Uploaded function here") /*handleUpload*/}
+      >
+        Upload
+      </button>
     </div>
   );
 };
