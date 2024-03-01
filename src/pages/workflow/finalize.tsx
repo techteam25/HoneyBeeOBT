@@ -201,7 +201,9 @@ const Finalize = () => {
       >
         For a Full Video export, please use the software linked here:{" "}
         <u>
-          <a href="https://github.com/OOCAZ/OOCAZ">Video Compiling Software</a>
+          <a href="https://github.com/OOCAZ/honeybee-movie-compiler">
+            Video Compiling Software
+          </a>
         </u>
       </Typography>
     </WorkflowLayout>
