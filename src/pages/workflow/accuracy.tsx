@@ -254,7 +254,6 @@ const Accuracy = () => {
           >
             <Typography as="h2">Upload Audio To Send for Check:</Typography>
             <FileUploader />
-            <FolderViewer />
           </Box>
         </div>
       )}
