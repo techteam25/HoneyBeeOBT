@@ -38,3 +38,6 @@ next-env.d.ts
 
 #instrumented
 /instrumented
+
+#uploads
+/public/uploads
