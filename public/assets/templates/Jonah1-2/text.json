@@ -5,7 +5,7 @@
   },
   "passages": [
     {
-      "image": "/assets/template1/1.jpg",
+      "image": "/assets/templates/Jonah1-2/1.jpg",
       "image_description": "Evil people standing around",
       "audio": "/assets/templates/Jonah1-2/audio/Jonah1.1-2.m4a",
       "book": "Jonah",
@@ -25,9 +25,9 @@
       ]
     },
     {
-      "image": "/assets/template1/2.jpg",
+      "image": "/assets/templates/Jonah1-2/2.jpg",
       "image_description": "Jonah getting onto a boat being loaded",
-      "audio": "/assets//templates/Jonah1-2/audio/Jonah1.3.m4a",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah1.3.m4a",
       "book": "Jonah",
       "chapter": 1,
       "verses": "3",
@@ -37,6 +37,292 @@
           "note": "OR went  OR traveled",
           "words": "went down",
           "more": "Jonah had to travel from a high elevation (Jerusalem city) down to Joppa city which was a low elevation, on the beach, at sea level, where a ship could be docked."
+        }
+      ]
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/4.jpg",
+      "image_description": "The stormy sea",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah1.4-5.m4a",
+      "book": "Jonah",
+      "chapter": 1,
+      "verses": "4-5",
+      "text": "4 Then Yahweh caused a very strong wind to blow, and there was such a violent storm that the sailors thought the ship would break apart. 5 The sailors were very frightened. Because of that, they each started to pray to their own gods to save them. Then they threw the cargo into the sea to make the ship lighter in order that it would not sink easily.",
+      "notes": []
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/3.jpg",
+      "image_description": "Jonah being thrown into the sea",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah1.6.m4a",
+      "book": "Jonah",
+      "chapter": 1,
+      "verses": "6",
+      "text": "6 Then the captain went down to where Jonah was sleeping deeply. He awoke him and said to him, “You should not be sleeping during a storm like this! Get up and pray to your god! Perhaps he will pity us and save us, in order that we will not drown!” But Jonah refused to do that."
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/5.jpg",
+      "image_description": "The sailors throwing Jonah into the sea",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah1.7-8.m4a",
+      "book": "Jonah",
+      "chapter": 1,
+      "verses": "7-8",
+      "text": "7 Then the sailors said to each other, “We need to cast lots to determine who has caused all this trouble!” So they did that, and the object with Jonah’s mark fell out of the container.8 So various sailors asked Jonah, “Are you the one who has caused us all this trouble?” “What work do you do?” “Where are you coming from?” “What country and what people-group do you belong to?”",
+      "notes": [
+        {
+          "note": "OR shake in a container small objects that we have all marked and then let one fall out",
+          "words": "cast lots",
+          "additional": "might need an audio explanation of other ways to 'cast lots'. For example, throw dice, draw straws, pick stones ..."
+        },
+        {
+          "note": "OR offended the god that caused the storm",
+          "words": "caused all this trouble"
+        }
+      ]
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/5.jpg",
+      "image_description": "The sailors throwing Jonah into the sea",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah1.9.m4a",
+      "book": "Jonah",
+      "chapter": 1,
+      "verses": "9",
+      "text": "9 Jonah replied, “I am a Hebrew. I worship Yahweh God, who lives in heaven. He is the one who made the sea and the land. I am trying to escape from doing what Yahweh told me to do.”"
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/5.jpg",
+      "image_description": "The sailors throwing Jonah into the sea",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah1.10-11.m4a",
+      "book": "Jonah",
+      "chapter": 1,
+      "verses": "10-11",
+      "text": "10 After the sailors heard that, they were more terrified. So, they asked him, “Do you realize what trouble you have caused?” 11 The storm kept getting worse and the waves kept getting bigger. So, one of the sailors asked Jonah, “What must we do to you so that your god will make the sea become calm?”",
+      "notes": [
+        {
+          "note": "OR What you have done/are doing is very bad/dangerous!",
+          "words": "Do you realize what trouble you have caused?"
+        }
+      ]
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/3.jpg",
+      "image_description": "Jonah being thrown into the sea",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah1.12-13.m4a",
+      "book": "Jonah",
+      "chapter": 1,
+      "verses": "12-13",
+      "text": "12 He replied, “Pick me up and throw me into the sea. If you do that, it will become calm. I know that this terrible storm is the result of my not doing what Yahweh told me to do.” 13 But the sailors did not want to do that. Instead, they tried hard to row the ship back to the land. But they could not do that, because the storm continued to get worse."
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/6.jpg",
+      "image_description": "The sailors throwing Jonah into the sea",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah1.14.m4a",
+      "book": "Jonah",
+      "chapter": 1,
+      "verses": "14",
+      "text": "14 Therefore, they prayed to Yahweh, “O Yahweh, please do not let us drown because of our causing this man to die.  O Yahweh, we beg you, if this man has not done any wrong, don't consider us to be guilty when we cause him to die because you have sent this storm for your own good reasons.”",
+      "notes": [
+        {
+          "note": "OR you have done what you wanted to do",
+          "words": "you have sent this storm for your own good reasons"
+        }
+      ]
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/7.jpg",
+      "image_description": "The stormy sea",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah1.15-16.m4a",
+      "book": "Jonah",
+      "chapter": 1,
+      "verses": "15-16",
+      "text": "15 Then they picked Jonah up and threw him into the sea. Then the sea became calm. 16 When that happened, the sailors became greatly awed at Yahweh’s power. So, they offered a sacrifice to Yahweh, and they vowed to him that they would do things that would please him."
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/8.jpg",
+      "image_description": "Jonah being swallowed by the fish",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah1.17.m4a",
+      "book": "Jonah",
+      "chapter": 1,
+      "verses": "17",
+      "text": "17 While they were doing that, Yahweh sent a huge fish that swallowed Jonah. Then Jonah was inside the fish for three days and three nights.",
+      "notes": [
+        {
+          "note": "that swallowed Jonah [alive]",
+          "words": "that swallowed Jonah"
+        },
+        {
+          "note": "OR three days and nights",
+          "words": "for three days and three nights"
+        }
+      ]
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/9.jpg",
+      "image_description": "Jonah praying inside the fish",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah2.1.m4a",
+      "book": "Jonah",
+      "chapter": 2,
+      "verses": "1",
+      "text": "1 While he was inside the huge fish, Jonah prayed to Yahweh God, whom he worshiped. [This is what Jonah reported later:] "
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/10.jpg",
+      "image_description": "Jonah praying inside the fish",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah2.2.m4a",
+      "book": "Jonah",
+      "chapter": 2,
+      "verses": "2",
+      "text": "2 Jonah said,“Yahweh, when I was greatly distressed there in the fish belly, I prayed to you, and you heard what I prayed. When I was about to descend way down into the place where dead people go, you heard me when I called out for you to help/save me.",
+      "notes": [
+        {
+          "note": "OR  Jonah prayed",
+          "words": "Jonah said",
+          "additional": "Jonah’s prayer is a Hebrew poem or song.  If you want to  create a poem in your language from the content of Jonah’s prayer, or sing Jonah’s song in your language, that would be very appropriate"
+        },
+        {
+          "note": "OR when I almost died OR when I was as good as dead",
+          "words": "about to descend way down into the place where dead people go"
+        }
+      ]
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/8.jpg",
+      "image_description": "Jonah being swallowed by the fish",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah2.3.m4a",
+      "book": "Jonah",
+      "chapter": 2,
+      "verses": "3",
+      "text": "3 You threw me down into the deep water, into the bottom of the sea. The currents of the sea swirled around me, and the huge waves crashed above me.",
+      "notes": [
+        {
+          "note": "OR You buried me under crashing waves",
+          "words": "the huge waves crashed above me"
+        }
+      ]
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/9.jpg",
+      "image_description": "Jonah praying inside the fish",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah2.4.m4a",
+      "book": "Jonah",
+      "chapter": 2,
+      "verses": "4",
+      "text": "4 Then I thought, ‘Although You have banished me, I will never be able to enter your presence again. Yet I will go to see your holy temple again!’",
+      "notes": [
+        {
+          "words": "Then I thought, “Although you",
+          "note": "OR I thought that although you ..",
+          "additional": "Since Jonah is thinking and not speaking out loud, it might be best to use an indirect quote rather than a direct speech quote."
+        },
+        {
+          "words": "OR But surely I will ",
+          "note": "Yet I will",
+          "additional": "There is a text translation issue with this part of verse 4.  The Hebrew text introduces Jonah’s second thought with a word meaning ‘yet’ or ‘surely’, expressing hope. But there is one alternate Greek translation that uses a word meaning ‘how’, expressing a sense of hopelessness, that Jonah might never again see the Lord.  English versions are divided in how they render this meaning.  Many follow the second alternative, even though it has little textual support.  So, it is recommended that you follow the Hebrew text.  (TN Jonah)"
+        },
+        {
+          "note": "to see your holy temple again",
+          "words": "OR to see the holy place where you [Yahweh] live",
+          "additional": "There is disagreement among scholars concerning whether the temple mentioned in chapter 2, verses 4 and 7, refers to the earthly temple in Jerusalem, or to Yahweh’s eternal dwelling place in heaven. So, if possible, avoid referring to the location of the temple in these verses. In both verses, the sense seems to be “the holy place where you (the Lord) live.” (TN Jonah, Hohulin, 2000) Both the Jerusalem temple and heaven were true dwelling places for Yahweh. The Glory of Yahweh Himself used to dwell in the tabernacle and later in the temple. Jonah had 'come down' from Jerusalem to Joppa, and contemplated returning to Jerusalem. In the context of Jewish 'cosmic geography,' Judah was Yahweh's land, and Nineveh was a dwelling place for demons.  (G. Currah)"
+        }
+      ]
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/9.jpg",
+      "image_description": "Jonah praying inside the fish",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah2.5.m4a",
+      "book": "Jonah",
+      "chapter": 2,
+      "verses": "5",
+      "text": "5 The water surrounded me, and threatened to drown me. Seaweed was wrapped around my head.",
+      "notes": [
+        {
+          "note": "OR sea plants",
+          "words": "seaweed"
+        }
+      ]
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/10.jpg",
+      "image_description": "Jonah praying inside the fish",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah2.6.m4a",
+      "book": "Jonah",
+      "chapter": 2,
+      "verses": "6",
+      "text": "6 I sank down to where the mountains start rising from the bottom of the sea. I thought that forever it would be as though my body would be in a prison inside the earth below me. But you, Yahweh God, whom I worship, you rescued me from going down to the place of the dead.",
+      "notes": [
+        {
+          "note": "OR rescued me from death OR rescued me back from dying",
+          "words": "rescued me from going down to the place of the dead",
+          "additional": "Whether Jonah died physically or only metaphorically remains a question."
+        }
+      ]
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/10.jpg",
+      "image_description": "Jonah praying inside the fish",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah2.7.m4a",
+      "book": "Jonah",
+      "chapter": 2,
+      "verses": "7",
+      "text": "7 When I was almost dead, Yahweh, I thought about you. You heard my prayer to you, up there where you are, in your holy temple.",
+      "notes": [
+        {
+          "note": "OR As I was dying",
+          "words": "When I was almost dead"
+        }
+      ]
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/10.jpg",
+      "image_description": "Jonah praying inside the fish",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah2.8.m4a",
+      "book": "Jonah",
+      "chapter": 2,
+      "verses": "8",
+      "text": "8 All those who worship worthless idols are rejecting you, the one who could act kindly toward them.",
+      "notes": [
+        {
+          "note": "OR who is faithful [to keep his promises]",
+          "words": "who could act kindly",
+          "additional": "Khesed. The common meaning of the Hebrew term khesed seems to include loyalty or reliability."
+        }
+      ]
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/10.jpg",
+      "image_description": "Jonah praying inside the fish",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah2.9.m4a",
+      "book": "Jonah",
+      "chapter": 2,
+      "verses": "9",
+      "text": "9 But I will sing to thank you, and I will offer a sacrifice to thank you, Yahweh. I will surely do what I have solemnly promised to do. Yahweh, you are the only one who is able to save us.”",
+      "notes": [
+        {
+          "note": "OR But, as for me, I",
+          "words": "But I"
+        },
+        {
+          "note": "OR offer to sacrifice animals to thank you",
+          "words": "offer a sacrifice to thank you",
+          "additional": "In ancient times, pagans commonly offered sacrifices to bribe their gods or to placate them. In Israel, however, sacrifices were for 'expiation, consecration, fellowship” (Rainey, “Order,” 498). Thus, Israelites offered three kinds of sacrifices: 1) Purification sacrifices. Since human beings pollute their community with everything that comes from their body, they had to offer bloody sacrifices to purify Yahweh's tabernacle (tent), so that he could continue to dwell amongst them. 2) Worship sacrifices. Just as people must pay taxes and tribute to chiefs and kings, so humans had to offer up burnt sacrifices to honour Yahweh, along with their prayers and petitions on behalf of their community and of themselves. 3) Thanksgiving sacrifices. Both the community and individuals offered sacrifices in thanks and praise to Yahweh who had provided all that they needed, or after he had answered their prayers. However, there was no sacrifice to remove the guilt of personal sins and crimes. Much later, Jesus would offer himself as a sacrifice, when he was crucified, so that God forgives the sins of those who repent and trust in Jesus. (Adapted from Lexham Bible Dictionary.) GC"
+        },
+        {
+          "note": "OR Because it is Yahweh alone who saves anyone.",
+          "words": "Yahweh, you are the only one who is able to save us"
+        }
+      ]
+    },
+    {
+      "image": "/assets/templates/Jonah1-2/11.jpg",
+      "image_description": "The fish spitting Jonah out onto the beach",
+      "audio": "/assets/templates/Jonah1-2/audio/Jonah2.10.m4a",
+      "book": "Jonah",
+      "chapter": 2,
+      "verses": "10",
+      "text": "10 Then Yahweh commanded the huge fish to vomit out Jonah. So the fish vomited Jonah onto the dry land.",
+      "notes": [
+        {
+          "note": "OR After Jonah prayed,",
+          "words": "Then"
         }
       ]
     }

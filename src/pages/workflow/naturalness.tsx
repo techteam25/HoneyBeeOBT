@@ -18,6 +18,9 @@ import { Typography } from "@/components/UI/Typography";
 import exegeticalHelps from "../../../public/exegeticalHelps.json";
 import Link from "next/link";
 import AudioUploader from "@/components/util/AudioUploader";
+import { getLocalStorageItem } from "@/components/util/localStorage";
+import FileUploader from "@/components/util/FileUploader";
+import FolderViewer from "@/components/util/FolderViewer";
 
 interface JSONData {
   name: string;
@@ -81,6 +84,7 @@ const Naturalness = () => {
   const [audioRecordings, setAudioRecordings] = React.useState<AudioData[]>([]);
   const router = useRouter();
   const [arrayPassage, setArrayPassage] = React.useState<string[]>([]);
+  const selected = getLocalStorageItem("selected");
 
   function exegeticalSetter() {
     var temp: ReactNode[] = [];
@@ -122,18 +126,21 @@ const Naturalness = () => {
     setToggle(false);
     async function getData() {
       if (toggle) {
-        await axios.get("/api/workflow/testSelected").then((response) => {
-          setSelectedData(response.data);
-          var temp = response.data.passages[data].text.split(" ");
-          setArrayPassage(temp);
-          processExegeticalHelps();
-          setLoading(false);
-        });
+        await axios
+          .post("/api/workflow/listofTemplates", { selected: selected })
+          .then((response) => {
+            setSelectedData(response.data);
+            var temp = response.data.passages[data].text.split(" ");
+            setArrayPassage(temp);
+            processExegeticalHelps();
+            setLoading(false);
+          });
+
         return;
       }
     }
     getData();
-  }, [arrayData, toggle]);
+  }, [data, toggle, arrayPassage]);
 
   const addAudioElement = (blob: Blob | MediaSource) => {
     const url = URL.createObjectURL(blob);
@@ -251,7 +258,8 @@ const Naturalness = () => {
             }}
           >
             <Typography as="h2">Upload Audio To Send for Check:</Typography>
-            <AudioUploader />
+            <FileUploader />
+            <FolderViewer />
           </Box>
         </div>
       )}

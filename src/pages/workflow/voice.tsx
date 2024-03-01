@@ -18,6 +18,7 @@ import { Typography } from "@/components/UI/Typography";
 import Crunker from "crunker";
 import exegeticalHelps from "../../../public/exegeticalHelps.json";
 import Link from "next/link";
+import { getLocalStorageItem } from "@/components/util/localStorage";
 
 export interface IFile {
   file: string;
@@ -84,6 +85,7 @@ const VoiceStudio = () => {
   );
   const router = useRouter();
   const [arrayPassage, setArrayPassage] = React.useState<string[]>([]);
+  const selected = getLocalStorageItem("selected");
 
   function exegeticalSetter() {
     var temp: ReactNode[] = [];
@@ -125,18 +127,21 @@ const VoiceStudio = () => {
     setToggle(false);
     async function getData() {
       if (toggle) {
-        await axios.get("/api/workflow/testSelected").then((response) => {
-          setSelectedData(response.data);
-          var temp = response.data.passages[data].text.split(" ");
-          setArrayPassage(temp);
-          processExegeticalHelps();
-          setLoading(false);
-        });
+        await axios
+          .post("/api/workflow/listofTemplates", { selected: selected })
+          .then((response) => {
+            setSelectedData(response.data);
+            var temp = response.data.passages[data].text.split(" ");
+            setArrayPassage(temp);
+            processExegeticalHelps();
+            setLoading(false);
+          });
+
         return;
       }
     }
     getData();
-  }, [arrayData, toggle]);
+  }, [data, toggle, arrayPassage]);
 
   const addAudioElement = (blob: Blob | MediaSource) => {
     const url = URL.createObjectURL(blob);

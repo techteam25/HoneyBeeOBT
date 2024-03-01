@@ -31,6 +31,8 @@ const Select = () => {
           return (
             <div key={index}>
               <Button
+                style={{ margin: "10px" }}
+                variant="contained"
                 onClick={() => {
                   console.log(item);
                   setLocalStorageItem("selected", item.learn.title);
