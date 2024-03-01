@@ -9,7 +9,7 @@ import ImageCards from "@/components/cards/imageCards";
 import TitleCard from "@/components/cards/titleCard";
 import { useRouter } from "next/router";
 import { Typography } from "@/components/UI/Typography";
-import exegeticalHelps from "../../../public/exegeticalHelps.json";
+import exegeticalHelps from "../../../public/exegeticalhelps.json";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { set } from "mongoose";
