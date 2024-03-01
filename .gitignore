@@ -40,4 +40,4 @@ next-env.d.ts
 /instrumented
 
 #uploads
-/public/uploads
+/public/uploads/
