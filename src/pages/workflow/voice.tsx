@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import { Typography } from "@/components/UI/Typography";
 import Crunker from "crunker";
-import exegeticalHelps from "../../../public/exegeticalHelps.json";
+import exegeticalHelps from "../../../public/exegeticalhelps.json";
 import Link from "next/link";
 import { getLocalStorageItem } from "@/components/util/localStorage";
 

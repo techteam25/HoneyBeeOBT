@@ -15,7 +15,7 @@ import TitleCard from "@/components/cards/titleCard";
 import { useRouter } from "next/router";
 import { AudioRecorder } from "react-audio-voice-recorder";
 import { Typography } from "@/components/UI/Typography";
-import exegeticalHelps from "../../../public/exegeticalHelps.json";
+import exegeticalHelps from "../../../public/exegeticalhelps.json";
 import Link from "next/link";
 import AudioUploader from "@/components/util/AudioUploader";
 import { getLocalStorageItem } from "@/components/util/localStorage";
