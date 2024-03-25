@@ -27,6 +27,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
 # vercel
 .vercel
@@ -37,3 +38,6 @@ next-env.d.ts
 
 #instrumented
 /instrumented
+
+#uploads
+/public/uploads/

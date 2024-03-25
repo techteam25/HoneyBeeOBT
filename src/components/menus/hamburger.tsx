@@ -156,6 +156,15 @@ const HamburgerMenu = () => {
             </Typography>
           </Link>
 
+          <Link id="workflow-learn" href="/workflow/select">
+            <div className="menu-item workflow-menu-item">
+              <Add sx={{ color: "#eabe0a" }} />
+              <Typography className="menu-item-text">
+                Select a Template
+              </Typography>
+            </div>
+          </Link>
+
           <Link id="workflow-learn" href="/workflow/learn">
             <div className="menu-item workflow-menu-item">
               <Lightbulb sx={{ color: "#00CC88" }} />

@@ -9,10 +9,10 @@ export default async function handler(
   try {
     if (data.page === "/home") {
       returnVal =
-        "Welcome to the home page, for specific help otions please got to the page you want help on an dpress the help button";
+        "Welcome to the home page, for specific help otions please got to the page you want help on and press the help button";
     } else if (data.page === "/about") {
       returnVal =
-        "Welcome to the about page, for specific help otions please got to the page you want help on an dpress the help button";
+        "Welcome to the about page, for specific help otions please got to the page you want help on and press the help button";
     } else if (data.page === "/language") {
       returnVal =
         "Welcome to the language page, Select the language you want to work in.";

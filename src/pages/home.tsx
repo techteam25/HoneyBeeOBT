@@ -94,7 +94,7 @@ const Home = () => {
       <Card sx={{ backgroundColor: "#af2e2e" }}>
         <CardContent>
           <Typography variant="h3" style={{ textAlign: "center" }}>
-            Story Template
+            Stories
           </Typography>
         </CardContent>
       </Card>
