@@ -132,7 +132,7 @@ const Translate = () => {
       }
     }
     getData();
-  }, [data, toggle, arrayPassage]);
+  }, [data, toggle, arrayPassage, selected]);
 
   const addAudioElement = (blob: Blob | MediaSource) => {
     const url = URL.createObjectURL(blob);
