@@ -12,7 +12,6 @@ import { Typography } from "@/components/UI/Typography";
 import exegeticalHelps from "../../../public/exegeticalhelps.json";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { set } from "mongoose";
 import { getLocalStorageItem } from "@/components/util/localStorage";
 
 interface JSONData {
@@ -132,7 +131,7 @@ const Translate = () => {
       }
     }
     getData();
-  }, [data, toggle, arrayPassage]);
+  }, [data, toggle, arrayPassage, selected]);
 
   const addAudioElement = (blob: Blob | MediaSource) => {
     const url = URL.createObjectURL(blob);
